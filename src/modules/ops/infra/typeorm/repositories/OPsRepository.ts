@@ -1,0 +1,52 @@
+import ICreateOPDTO from '@modules/ops/dtos/ICreateDTO';
+import IOPsRopository from '@modules/ops/repositories/IOPsRepository';
+import { getRepository, Repository } from 'typeorm';
+import OP from '../entities/OP';
+
+class OPsRepository implements IOPsRopository {
+  private ormRepository: Repository<OP>;
+
+  constructor() {
+    this.ormRepository = getRepository(OP);
+  }
+
+  public async create({
+    user_id,
+    status,
+    op_number,
+  }: ICreateOPDTO): Promise<OP> {
+    const op = this.ormRepository.create({
+      user_id,
+      status,
+      op_number,
+    });
+
+    await this.ormRepository.save(op);
+
+    return op;
+  }
+
+  public async findById(op_id: string): Promise<OP | undefined> {
+    const op = await this.ormRepository.findOne(op_id, {
+      relations: ['user'],
+    });
+
+    return op;
+  }
+
+  public async findAll(): Promise<OP[]> {
+    const ops = await this.ormRepository.find();
+
+    return ops;
+  }
+
+  public async save(op: OP): Promise<OP> {
+    return this.ormRepository.save(op);
+  }
+
+  public async delete(op: OP): Promise<void> {
+    await this.ormRepository.remove(op);
+  }
+}
+
+export default OPsRepository;
