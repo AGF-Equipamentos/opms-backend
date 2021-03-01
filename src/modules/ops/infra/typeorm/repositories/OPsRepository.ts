@@ -14,14 +14,24 @@ class OPsRepository implements IOPsRopository {
     user_id,
     status,
     op_number,
+    part_number,
+    description,
   }: ICreateOPDTO): Promise<OP> {
     const op = this.ormRepository.create({
       user_id,
       status,
       op_number,
+      part_number,
+      description,
     });
 
     await this.ormRepository.save(op);
+
+    const opFinded = await this.findById(op.id);
+
+    if (opFinded) {
+      return opFinded;
+    }
 
     return op;
   }
@@ -34,8 +44,14 @@ class OPsRepository implements IOPsRopository {
     return op;
   }
 
+  public async findByOpNumber(op_number: string): Promise<OP | undefined> {
+    const op = await this.ormRepository.findOne({ where: { op_number } });
+
+    return op;
+  }
+
   public async findAll(): Promise<OP[]> {
-    const ops = await this.ormRepository.find();
+    const ops = await this.ormRepository.find({ relations: ['user'] });
 
     return ops;
   }

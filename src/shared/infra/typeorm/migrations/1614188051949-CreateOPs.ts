@@ -32,6 +32,14 @@ export default class CreateOPs1614188051949 implements MigrationInterface {
             type: 'varchar',
           },
           {
+            name: 'part_number',
+            type: 'varchar',
+          },
+          {
+            name: 'description',
+            type: 'varchar',
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',

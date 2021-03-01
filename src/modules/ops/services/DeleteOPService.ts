@@ -20,6 +20,12 @@ class UpdateOPService {
       throw new AppError('OP does not exits');
     }
 
+    if (op.status !== 'Entrega pendente') {
+      throw new AppError(
+        'OP can not be deleted because it was already started',
+      );
+    }
+
     const updatedOP = await this.opsRepository.delete(op);
 
     return updatedOP;

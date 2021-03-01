@@ -27,6 +27,12 @@ class OP {
   @Column()
   op_number: string;
 
+  @Column()
+  part_number: string;
+
+  @Column()
+  description: string;
+
   @CreateDateColumn()
   created_at: Date;
 
