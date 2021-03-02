@@ -9,7 +9,7 @@ import User from '../infra/typeorm/entities/User';
 
 interface IRequest {
   name: string;
-  email: string;
+  username: string;
   password: string;
   role: string;
 }
@@ -29,21 +29,21 @@ class CreateUserService {
 
   public async execute({
     name,
-    email,
+    username,
     password,
     role,
   }: IRequest): Promise<User> {
-    const checkUserExists = await this.usersRepository.findByEmail(email);
+    const checkUserExists = await this.usersRepository.findByUsername(username);
 
     if (checkUserExists) {
-      throw new AppError('Email address already used.');
+      throw new AppError('Username address already used.');
     }
 
     const hashedPassword = await this.hashProvider.generateHash(password);
 
     const user = await this.usersRepository.create({
       name,
-      email,
+      username,
       password: hashedPassword,
       role,
     });
