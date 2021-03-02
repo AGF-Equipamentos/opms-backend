@@ -18,9 +18,6 @@ jobs:
 
     - name: install dependencies
       run: yarn
-    
-    - name: Run build
-      run: yarn build
       
     - name: Copy project to AGF
       uses: appleboy/scp-action@master
@@ -31,17 +28,16 @@ jobs:
         password: ${{ secrets.SSH_PASS }}
         source: ".,!node_modules"
         target: "~/app/logen-backend"
-        
+
     - name: Run production scripts
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         port: ${{ secrets.SSH_PORT }}
-        key: ${{ secrets.SSH_KEY }}
+        password: ${{ secrets.SSH_PASS }}
         script: |
           cd ~/app/logen-backend
           yarn
-          yarn typeorm migration:run
           pm2 restart logen-backend
-      
+          pm2 restart protheus-api
