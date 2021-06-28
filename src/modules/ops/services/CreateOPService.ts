@@ -26,12 +26,7 @@ class CreateOPService {
 
     const opDetails = await axios({
       method: 'GET',
-      url: 'https://api.agfequipamentos.com.br/ops',
-      headers: {
-        'Content-Type': 'application/json',
-        filial: '0101',
-        opnumber: `${op_number}`,
-      },
+      url: `https://api.agfequipamentos.com.br/ops?filial=0101&opnumber=${op_number}`,
     });
 
     const op = await this.opsRepository.create({
