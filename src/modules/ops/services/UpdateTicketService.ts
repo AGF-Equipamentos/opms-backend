@@ -17,12 +17,7 @@ class UpdateOPService {
     private opsRepository: IOPsRepository,
   ) {}
 
-  public async execute({
-    user_id,
-    op_id,
-    status,
-    op_number,
-  }: IRequest): Promise<OP> {
+  public async execute({ op_id, status, op_number }: IRequest): Promise<OP> {
     const op = await this.opsRepository.findById(op_id);
 
     if (!op) {
