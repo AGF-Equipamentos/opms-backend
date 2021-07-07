@@ -25,6 +25,9 @@ class OP {
   status: string;
 
   @Column()
+  department: string;
+
+  @Column()
   op_number: string;
 
   @Column()

@@ -22,6 +22,7 @@ usersRouter.post(
       username: Joi.string().required(),
       password: Joi.string().required(),
       role: Joi.string().required(),
+      department: Joi.string().required(),
     },
   }),
   usersController.create,

@@ -12,6 +12,7 @@ interface IRequest {
   username: string;
   password: string;
   role: string;
+  department: string;
 }
 
 @injectable()
@@ -32,6 +33,7 @@ class CreateUserService {
     username,
     password,
     role,
+    department,
   }: IRequest): Promise<User> {
     const checkUserExists = await this.usersRepository.findByUsername(username);
 
@@ -46,6 +48,7 @@ class CreateUserService {
       username,
       password: hashedPassword,
       role,
+      department,
     });
 
     await this.cacheProvider.invalidatePrefix('providers-list');

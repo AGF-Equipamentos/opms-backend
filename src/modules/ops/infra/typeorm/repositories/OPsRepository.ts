@@ -13,6 +13,7 @@ class OPsRepository implements IOPsRopository {
   public async create({
     user_id,
     status,
+    department,
     op_number,
     part_number,
     description,
@@ -20,6 +21,7 @@ class OPsRepository implements IOPsRopository {
     const op = this.ormRepository.create({
       user_id,
       status,
+      department,
       op_number,
       part_number,
       description,

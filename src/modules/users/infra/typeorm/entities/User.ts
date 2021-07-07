@@ -28,6 +28,9 @@ class User {
   role: string;
 
   @Column()
+  department: string;
+
+  @Column()
   avatar: string;
 
   @CreateDateColumn()
