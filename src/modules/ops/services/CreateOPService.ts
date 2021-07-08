@@ -21,15 +21,21 @@ class CreateOPService {
   ) {}
 
   public async execute({ user_id, status, op_number }: IRequest): Promise<OP> {
-    const opFinded = await this.opsRepository.findByOpNumber(op_number);
     const user = await this.usersRepository.findById(user_id);
-
-    if (opFinded) {
-      throw new AppError('Essa OP já existe!');
-    }
 
     if (!user) {
       throw new AppError('Esse usuário não existe!');
+    }
+
+    const opFinded = await this.opsRepository.findByOpNumber(
+      op_number,
+      user.department,
+    );
+
+    if (opFinded) {
+      if (opFinded.department === user?.department) {
+        throw new AppError('Essa OP já existe!');
+      }
     }
 
     const opDetails = await axios({

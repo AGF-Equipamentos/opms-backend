@@ -4,13 +4,24 @@ import { container } from 'tsyringe';
 import CreateOPService from '@modules/ops/services/CreateOPService';
 import UpdateOPService from '@modules/ops/services/UpdateTicketService';
 import DeleteOPService from '@modules/ops/services/DeleteOPService';
+import ListOPsServiceByDepartment from '@modules/ops/services/ListOPsServiceByDepartment';
 
 export default class OPsController {
   public async index(request: Request, response: Response): Promise<Response> {
+    const { department } = request.query;
+
     const listOPs = container.resolve(ListOPsService);
+    const listOPsByDepartment = container.resolve(ListOPsServiceByDepartment);
+
+    if (department) {
+      const opa = String(department).split(',');
+      const ops = await listOPsByDepartment.execute({
+        department: opa,
+      });
+      return response.json(ops);
+    }
 
     const ops = await listOPs.execute();
-
     return response.json(ops);
   }
 

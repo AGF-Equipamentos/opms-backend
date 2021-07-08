@@ -8,7 +8,15 @@ const opsController = new OPsController();
 
 opsRouter.use(ensureAuthenticated);
 
-opsRouter.get('/', opsController.index);
+opsRouter.get(
+  '/',
+  celebrate({
+    [Segments.QUERY]: {
+      department: Joi.string(),
+    },
+  }),
+  opsController.index,
+);
 
 opsRouter.post(
   '/',

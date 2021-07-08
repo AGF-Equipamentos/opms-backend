@@ -46,10 +46,28 @@ class OPsRepository implements IOPsRopository {
     return op;
   }
 
-  public async findByOpNumber(op_number: string): Promise<OP | undefined> {
-    const op = await this.ormRepository.findOne({ where: { op_number } });
+  public async findByOpNumber(
+    op_number: string,
+    department: string,
+  ): Promise<OP | undefined> {
+    const op = await this.ormRepository.findOne({
+      where: { op_number, department },
+    });
 
     return op;
+  }
+
+  public async findByDepartment(
+    department: string[],
+  ): Promise<OP[] | undefined> {
+    const ops = await this.ormRepository.find({
+      where: department.map(departmentItem => {
+        return { department: departmentItem };
+      }),
+      relations: ['user'],
+    });
+
+    return ops;
   }
 
   public async findAll(): Promise<OP[]> {
