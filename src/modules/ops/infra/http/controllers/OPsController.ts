@@ -14,9 +14,9 @@ export default class OPsController {
     const listOPsByDepartment = container.resolve(ListOPsServiceByDepartment);
 
     if (department) {
-      const opa = String(department).split(',');
+      const departmentArray = String(department).split(',');
       const ops = await listOPsByDepartment.execute({
-        department: opa,
+        department: departmentArray,
       });
       return response.json(ops);
     }
