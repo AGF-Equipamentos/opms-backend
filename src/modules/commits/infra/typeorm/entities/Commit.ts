@@ -30,6 +30,9 @@ class Commit {
   @Column()
   qty_delivered: number;
 
+  @Column()
+  location: string;
+
   @CreateDateColumn()
   created_at: Date;
 

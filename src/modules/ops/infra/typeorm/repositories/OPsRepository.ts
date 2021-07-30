@@ -1,9 +1,9 @@
 import ICreateOPDTO from '@modules/ops/dtos/ICreateDTO';
-import IOPsRopository from '@modules/ops/repositories/IOPsRepository';
+import IOPsRepository from '@modules/ops/repositories/IOPsRepository';
 import { getRepository, Repository } from 'typeorm';
 import OP from '../entities/OP';
 
-class OPsRepository implements IOPsRopository {
+class OPsRepository implements IOPsRepository {
   private ormRepository: Repository<OP>;
 
   constructor() {

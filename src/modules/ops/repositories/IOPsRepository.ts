@@ -1,7 +1,7 @@
 import ICreateOPDTO from '../dtos/ICreateDTO';
 import OP from '../infra/typeorm/entities/OP';
 
-export default interface IOPsRopository {
+export default interface IOPsRepository {
   create(data: ICreateOPDTO): Promise<OP>;
   findById(op_id: string): Promise<OP | undefined>;
   findByOpNumber(
