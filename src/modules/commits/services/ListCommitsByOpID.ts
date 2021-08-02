@@ -3,8 +3,8 @@ import Commit from '@modules/commits/infra/typeorm/entities/Commit';
 import ICommitsRepository from '@modules/commits/repositories/ICommitsRepository';
 
 interface IRequest {
-  op: string;
-}''
+  op_id: string;
+}
 
 @injectable()
 class ListCommitsService {
@@ -13,8 +13,8 @@ class ListCommitsService {
     private commitsRepository: ICommitsRepository,
   ) {}
 
-  public async execute({ op }: IRequest): Promise<Commit[] | undefined> {
-    const commits = await this.commitsRepository.findCommitsByOpNumber(op);
+  public async execute({ op_id }: IRequest): Promise<Commit[] | undefined> {
+    const commits = await this.commitsRepository.findCommitsByOpNumber(op_id);
 
     return commits;
   }

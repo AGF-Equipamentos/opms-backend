@@ -8,6 +8,16 @@ const commitsController = new CommitsRouter();
 
 commitsRouter.use(ensureAuthenticated);
 
+commitsRouter.get(
+  '/:op_id',
+  celebrate({
+    [Segments.PARAMS]: {
+      op_id: Joi.string().uuid().required(),
+    },
+  }),
+  commitsController.index,
+);
+
 commitsRouter.put(
   '/:commit_id',
   celebrate({
