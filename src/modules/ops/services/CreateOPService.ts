@@ -43,7 +43,6 @@ class CreateOPService {
 
   public async execute({ user_id, status, op_number }: IRequest): Promise<returnCreatedCommits> {
     const user = await this.usersRepository.findById(user_id);
-
     if (!user) {
       throw new AppError('Esse usuário não existe!');
     }
@@ -52,7 +51,6 @@ class CreateOPService {
       op_number,
       user.department,
     );
-
     if (opFinded) {
       if (opFinded.department === user?.department) {
         throw new AppError('Essa OP já existe!');
@@ -63,7 +61,6 @@ class CreateOPService {
       method: 'GET',
       url: `https://api.agfequipamentos.com.br/ops?filial=0101&opnumber=${op_number}`,
     });
-
     const op = await this.opsRepository.create({
       user_id,
       status,
@@ -77,7 +74,6 @@ class CreateOPService {
       method: 'GET',
       url: `https://api.agfequipamentos.com.br/emp?filial=0101&op=${op_number}`,
     });
-
     const commitsArray = responseCommits.data;
 
     const commits: Commit[] = await Promise.all(commitsArray.map(async(commit: ICommit): Promise<Commit> => {
@@ -90,7 +86,6 @@ class CreateOPService {
       });
       return commitCreated
     }));
-
     const opWithCommits = {
       ...op,
       commits

@@ -14,7 +14,7 @@ class ListCommitsService {
   ) {}
 
   public async execute({ op_id }: IRequest): Promise<Commit[] | undefined> {
-    const commits = await this.commitsRepository.findCommitsByOpNumber(op_id);
+    const commits = await this.commitsRepository.findCommitsByOpID(op_id);
 
     return commits;
   }
