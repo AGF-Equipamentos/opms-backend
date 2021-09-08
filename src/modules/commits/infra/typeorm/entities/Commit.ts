@@ -33,6 +33,12 @@ class Commit {
   @Column()
   location: string;
 
+  @Column()
+  warehouse: string;
+
+  @Column()
+  description: string;
+
   @CreateDateColumn()
   created_at: Date;
 

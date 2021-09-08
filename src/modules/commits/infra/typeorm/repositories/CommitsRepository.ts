@@ -9,7 +9,7 @@ class CommitsRepository implements ICommitsRepository {
   constructor() {
     this.ormRepository = getRepository(Commit);
   }
-  public async findCommitsByOpNumber(op_id: string): Promise<Commit[] | undefined> {
+  public async findCommitsByOpID(op_id: string): Promise<Commit[] | undefined> {
     const commit = await this.ormRepository.find({
       where: { op_id }
     });
@@ -30,6 +30,8 @@ class CommitsRepository implements ICommitsRepository {
     part_number,
     qty_delivered,
     qty,
+    description,
+    warehouse,
     op_id,
     location,
 }: ICreateCommitDTO): Promise<Commit> {
@@ -37,6 +39,8 @@ class CommitsRepository implements ICommitsRepository {
       part_number,
       qty_delivered,
       qty,
+      description,
+      warehouse,
       op_id,
       location,
     });

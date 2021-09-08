@@ -27,6 +27,14 @@ export default class CreateCommits1626866490967 implements MigrationInterface {
             type: 'varchar',
           },
           {
+            name: 'description',
+            type: 'varchar',
+          },
+          {
+            name: 'warehouse',
+            type: 'varchar',
+          },
+          {
             name: 'qty_delivered',
             type: 'real',
           },

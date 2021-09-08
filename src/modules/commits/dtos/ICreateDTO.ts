@@ -4,4 +4,6 @@ export default interface ICreateCommitDTO {
   qty: number;
   op_id: string;
   location: string;
+  description: string;
+  warehouse: string;
 }

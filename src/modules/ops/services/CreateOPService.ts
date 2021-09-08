@@ -87,6 +87,8 @@ class CreateOPService {
         qty: commit.QUANTIDADE,
         qty_delivered: 0,
         location: commit.LOCACAO,
+        description: commit.DESCRICAO,
+        warehouse: commit.ARMAZEM
       });
       return commitCreated
     }));
