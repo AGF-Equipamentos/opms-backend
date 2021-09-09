@@ -3,11 +3,11 @@ import { inject, injectable } from 'tsyringe';
 import Commit from '@modules/commits/infra/typeorm/entities/Commit';
 import ICommitsRepository from '@modules/commits/repositories/ICommitsRepository';
 import IOPsRepository from '@modules/ops/repositories/IOPsRepository';
+import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 
 interface IRequest {
   commit_id: string;
   qty_delivered: number;
-  op_id: string;
 }
 
 @injectable()
@@ -15,18 +15,23 @@ class UpdateCommitService {
   constructor(
     @inject('CommitsRepository')
     private commitsRepository: ICommitsRepository,
+    @inject('UsersRepository')
+    private usersRepository: IUsersRepository,
     @inject('OPsRepository')
     private opsRepository: IOPsRepository,
   ) {}
 
-  public async execute({ commit_id, qty_delivered, op_id }: IRequest): Promise<Commit> {
+  public async execute({ commit_id, qty_delivered }: IRequest): Promise<Commit> {
     const commit = await this.commitsRepository.findById(commit_id);
-    
+
     if (!commit) {
       throw new AppError('Commit does not exits');
     }
     
-    const OP = await this.opsRepository.findById(op_id);
+    const OP = await this.opsRepository.findById(
+      commit.op_id,
+      );
+      console.log(OP)
 
     commit.qty_delivered = qty_delivered
 
@@ -36,10 +41,6 @@ class UpdateCommitService {
       throw new AppError('Commits array does not exits');
     }
       
-    // const result = commitsArray.map(commit => ({ qty: commit.qty, qty_delivered: commit.qty_delivered }), 
-    // commit.qty == commit.qty_delivered ? console.log('Saldo = 0') : console.log(`Saldo = ${commit.qty - commit.qty_delivered}`)
-    // );
-
     const balance_array = commitsArray.map((commit: { qty: any; qty_delivered: any; }) => {
       return commit.qty === commit.qty_delivered
     })
@@ -48,9 +49,7 @@ class UpdateCommitService {
 
     const partialDelivery = balance_array.some((balance: boolean) => balance === false)
 
-    const allBalancesZero = balance_array.every(function(balance: boolean) {
-      return balance === true;
-})
+    const allBalancesZero = balance_array.every((balance: boolean) => balance === true)
     // if(se tudo é true) {
     //   entregue
     // } else {
@@ -67,16 +66,24 @@ class UpdateCommitService {
 
     const updatedCommit = await this.commitsRepository.save(commit);
 
+    if (!OP) {
+      throw new AppError('OP does not exits');
+    }
+
     if (allBalancesZero === true) {
-      OP?.status == 'Entregue'
+      OP.status = 'Entregue'
     }
     else {
       if (balance_array.some((balance: boolean) => balance === true)) {
-        OP?.status == 'Entregue parcialmente' }
+        OP.status = 'Entregue parcialmente' }
       else {
-        OP?.status == 'Entrega pendente'
+        OP.status = 'Entrega pendente'
            }
         }
+
+      await this.opsRepository.save(OP);
+      console.log(OP)
+      console.log(OP.status)
 
     return updatedCommit;
   }
