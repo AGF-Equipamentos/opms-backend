@@ -17,6 +17,15 @@ class CommitsRepository implements ICommitsRepository {
     return commit;
   }
 
+  public async getQttdsByOpID(op_id: string): Promise<Commit[] | undefined> {
+    const commit = await this.ormRepository.find({
+      select: ["qty", "qty_delivered"],
+      where: { op_id } 
+    });
+
+    return commit;
+  }
+
   public async findById(id: string): Promise<Commit | undefined> {
     const commit = await this.ormRepository.findOne(id, {
     });
