@@ -5,7 +5,6 @@ import ListCommitsByOpID from '@modules/commits/services/ListCommitsByOpID';
 export default class CommitsController {
 
   public async index(request: Request, response: Response): Promise<Response> {
-    console.log(request)
     const { op_id } = request.params;
 
     const listCommits = container.resolve(ListCommitsByOpID);

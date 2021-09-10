@@ -1,5 +1,5 @@
 import ICreateCommitDTO from '@modules/commits/dtos/ICreateDTO';
-import ICommitsRepository from '@modules/commits/repositories/ICommitsRepository';
+import ICommitsRepository, { CommitStatus } from '@modules/commits/repositories/ICommitsRepository';
 import { getRepository, Repository } from 'typeorm';
 import Commit from '../entities/Commit';
 
@@ -17,7 +17,7 @@ class CommitsRepository implements ICommitsRepository {
     return commit;
   }
 
-  public async getQttdsByOpID(op_id: string): Promise<Commit[] | undefined> {
+  public async getStatusByOpID(op_id: string): Promise<CommitStatus[] | undefined> {
     const commit = await this.ormRepository.find({
       select: ["qty", "qty_delivered"],
       where: { op_id } 

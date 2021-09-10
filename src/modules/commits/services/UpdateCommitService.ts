@@ -24,45 +24,55 @@ class UpdateCommitService {
     if (!commit) {
       throw new AppError('Commit does not exits');
     }
-    
-    const OP = await this.opsRepository.findById(
-      commit.op_id,
-      );
 
     commit.qty_delivered = qty_delivered
 
     const updatedCommit = await this.commitsRepository.save(commit);
 
-    const commitsArray = await this.commitsRepository.getQttdsByOpID(commit.op_id);
+    const commitsArray = await this.commitsRepository.getStatusByOpID(commit.op_id);
 
     if (!commitsArray) {
       throw new AppError('Commits array does not exits');
     }
 
-    const partialDelivery = commitsArray.some(commit => commit.qty === commit.qty_delivered)
+    const test = commitsArray.reduce((acc, commit) => {
+      if(commit.qty === commit.qty_delivered) {
+        acc.entregue = acc.entregue + 1 
+        return acc
+      }
 
-    const allQttdsEqual = commitsArray.every(commit  => commit.qty === commit.qty_delivered)
+      if(commit.qty_delivered === 0) {
+        acc.pedente = acc.pedente + 1 
+        return acc
+      }
 
-    if (!OP) {
-      throw new AppError('OP does not exits');
+      acc.parcial = acc.parcial + 1 
+      return acc
+    }, {
+      pedente: 0,
+      parcial: 0,
+      entregue: 0
+    })
+
+    const op = await this.opsRepository.findById(
+      commit.op_id,
+    );
+
+    if (!op) {
+      throw new AppError('op does not exits');
     }
 
-    if (allQttdsEqual === true) {
-      OP.status = 'Entregue'
+    if(test.parcial === 0 && test.pedente === 0 ) {
+      op.status = 'Entregue'
+    } else {
+      if (test.parcial >= 1 || test.entregue >= 1) {
+        op.status = 'Entregue parcialmente'
+      } else {
+        op.status = 'Entrega pendente'
+      }
     }
-    else {
-      if (partialDelivery === true) {
-        OP.status = 'Entregue parcialmente' }
-      else {
-        OP.status = 'Entrega pendente'
-           }
-        }
-
-      await this.opsRepository.save(OP);
-
-      console.log(OP.status)
-      console.log(partialDelivery)
-      console.log(allQttdsEqual)
+      
+    await this.opsRepository.save(op);
 
     return updatedCommit;
   }
