@@ -9,10 +9,21 @@ class CommitsRepository implements ICommitsRepository {
   constructor() {
     this.ormRepository = getRepository(Commit);
   }
+
   public async findCommitsByOpID(op_id: string): Promise<Commit[] | undefined> {
     const commit = await this.ormRepository.find({
       where: { op_id }
     });
+
+    return commit;
+  }
+
+  public async findCommitsID(id: string[]): Promise<Commit[] | undefined> {
+    const commit = await this.ormRepository.find({
+        where: id.map(id => {
+        return { id: id };
+      }),
+  });
 
     return commit;
   }
@@ -27,24 +38,19 @@ class CommitsRepository implements ICommitsRepository {
   }
 
   public async findById(id: string): Promise<Commit | undefined> {
-    const commit = await this.ormRepository.findOne(id, {
-    });
+    const commit = await this.ormRepository.findOne(id);
 
     return commit;
   }
     public async save(commit: Commit): Promise<Commit> {
       return this.ormRepository.save(commit);
     }
-  public async create({
-    part_number,
-    qty_delivered,
-    qty,
-    description,
-    warehouse,
-    op_id,
-    location,
-}: ICreateCommitDTO): Promise<Commit> {
-    const commit = this.ormRepository.create({
+
+    public async saveAll(commit: Commit[]): Promise<Commit[]> {
+      return this.ormRepository.save(commit);
+    }
+
+    public async create({
       part_number,
       qty_delivered,
       qty,
@@ -52,12 +58,21 @@ class CommitsRepository implements ICommitsRepository {
       warehouse,
       op_id,
       location,
-    });
+    }: ICreateCommitDTO): Promise<Commit> {
+      const commit = this.ormRepository.create({
+        part_number,
+        qty_delivered,
+        qty,
+        description,
+        warehouse,
+        op_id,
+        location,
+      });
 
-    await this.ormRepository.save(commit);
-    
-    return commit;
-  }
+      await this.ormRepository.save(commit);
+      
+      return commit;
+    }
 }
 
 export default CommitsRepository;
