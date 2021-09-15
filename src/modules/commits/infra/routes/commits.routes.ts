@@ -19,14 +19,15 @@ commitsRouter.get(
 );
 
 commitsRouter.put(
-  '/:commit_id',
+  '/',
   celebrate({
-    [Segments.PARAMS]: {
-      commit_id: Joi.string().uuid().required(),
-    },
-    [Segments.BODY]: {
-      qty_delivered: Joi.number(),
-    },
+    [Segments.BODY]:
+    {
+      commitsUpdated: Joi.array().items(Joi.object().keys({
+        commit_id: Joi.string().uuid().required(),
+        qty_delivered: Joi.number()
+      }))
+    }
   }),
   commitsController.update,
 );
