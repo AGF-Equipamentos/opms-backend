@@ -14,11 +14,11 @@ export default class CommitsController {
     }
 
   public async update(request: Request, response: Response): Promise<Response> {
-    const commitsUpdated = request.body;
-    // enviar e retornar array 
-    const updateCommit = container.resolve(UpdateCommitService);
+    const { commitsUpdated } = request.body;
 
-    const commits = await updateCommit.execute( commitsUpdated );
+    const updateCommit = container.resolve(UpdateCommitService);
+    const commits = await updateCommit.execute( { commitsUpdated } );
+    
     return response.json(commits);
   }
 }

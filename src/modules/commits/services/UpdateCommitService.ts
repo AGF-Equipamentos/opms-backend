@@ -39,15 +39,15 @@ class UpdateCommitService {
       return commit
     })
     
-    const commitsArray = await this.commitsRepository.getCommitsQtyByOpID(commit[0].op_id);
-
     const updatedCommit = await this.commitsRepository.saveAll(commit);
+    
+    const commitsArray = await this.commitsRepository.getCommitsQtyByOpID(commit[0].op_id);
 
     if (!commitsArray) {
       throw new AppError('Commits array does not exits');
     }
 
-    const test = updatedCommit.reduce((acc, commit) => {
+    const deliveredBalance = updatedCommit.reduce((acc, commit) => {
       if(commit.qty === commit.qty_delivered) {
         acc.entregue = acc.entregue + 1
         return acc
@@ -75,16 +75,15 @@ class UpdateCommitService {
       throw new AppError('op does not exits');
     }
 
-    if(test.parcial === 0 && test.pedente === 0 ) {
+    if(deliveredBalance.parcial === 0 && deliveredBalance.pedente === 0 ) {
       op.status = 'Entregue'
     } else {
-      if (test.parcial >= 1 || test.entregue >= 1) {
+      if (deliveredBalance.parcial >= 1 || deliveredBalance.entregue >= 1) {
         op.status = 'Entregue parcialmente'
       } else {
         op.status = 'Entrega pendente'
       }
     }
-    console.log("Status: " + String(op.status))
 
     await this.opsRepository.save(op);
 

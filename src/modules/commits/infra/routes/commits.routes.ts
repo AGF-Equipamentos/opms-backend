@@ -21,9 +21,8 @@ commitsRouter.get(
 commitsRouter.put(
   '/',
   celebrate({
-    [Segments.BODY]:
-    {
-      commitsUpdated: Joi.array().items(Joi.object().keys({
+    [Segments.BODY]: {
+      commitsUpdated: Joi.array().items(Joi.object({
         commit_id: Joi.string().uuid().required(),
         qty_delivered: Joi.number()
       }))
