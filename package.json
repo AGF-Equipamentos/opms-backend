@@ -34,6 +34,7 @@
     "nodemailer": "^6.4.6",
     "pg": "^8.0.3",
     "rate-limiter-flexible": "^2.1.5",
+    "react-excel-workbook": "^0.0.4",
     "redis": "^3.0.2",
     "reflect-metadata": "^0.1.13",
     "tsyringe": "^4.2.0",
