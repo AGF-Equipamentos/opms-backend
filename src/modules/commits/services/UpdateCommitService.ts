@@ -47,7 +47,7 @@ class UpdateCommitService {
       throw new AppError('Commits array does not exits');
     }
 
-    const deliveredBalance = updatedCommit.reduce((acc, commit) => {
+    const deliveredBalance = commitsArray.reduce((acc, commit) => {
       if(commit.qty === commit.qty_delivered) {
         acc.entregue = acc.entregue + 1
         return acc
@@ -65,8 +65,7 @@ class UpdateCommitService {
       pedente: 0,
       parcial: 0,
       entregue: 0
-    })
-
+    }) 
     const op = await this.opsRepository.findById(
       commit[0].op_id,
     );
@@ -75,7 +74,7 @@ class UpdateCommitService {
       throw new AppError('op does not exits');
     }
 
-    if(deliveredBalance.parcial === 0 && deliveredBalance.pedente === 0 ) {
+    if(deliveredBalance.parcial === 0 && deliveredBalance.pedente === 0) {
       op.status = 'Entregue'
     } else {
       if (deliveredBalance.parcial >= 1 || deliveredBalance.entregue >= 1) {
