@@ -61,7 +61,7 @@ class CreateOPService {
 
     const opDetails = await axios({
       method: 'GET',
-      url: `https://api.agfequipamentos.com.br/ops?filial=0101&opnumber=${op_number}`,
+      url: `${process.env.APP_PROTHEUS_API_URL}/ops?filial=0101&opnumber=${op_number}`,
     });
 
     const op = await this.opsRepository.create({
@@ -75,7 +75,7 @@ class CreateOPService {
 
     const responseCommits = await axios({
       method: 'GET',
-      url: `https://api.agfequipamentos.com.br/emp?filial=0101&op=${op_number}`,
+      url: `${process.env.APP_PROTHEUS_API_URL}/emp?filial=0101&kanban=false&op=${op_number}`,
     });
 
     const commitsArray = responseCommits.data;
