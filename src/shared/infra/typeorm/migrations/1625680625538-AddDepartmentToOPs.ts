@@ -14,6 +14,6 @@ export default class AddDepartmentToOPs1625680625538
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropColumn('users', 'department');
+    await queryRunner.dropColumn('ops', 'department');
   }
 }
