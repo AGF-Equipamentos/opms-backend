@@ -75,7 +75,7 @@ class CreateOPService {
 
     const responseCommits = await axios({
       method: 'GET',
-      url: `${process.env.APP_PROTHEUS_API_URL}/emp?filial=0101&kanban=false&superercado=true&op=${op_number}`,
+      url: `${process.env.APP_PROTHEUS_API_URL}/emp?filial=0101&kanban=false&supermercado=true&op=${op_number}`,
     });
 
     const commitsArray = responseCommits.data;
