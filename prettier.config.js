@@ -1,4 +1,6 @@
-export const singleQuote = true;
-export const trailingComma = 'all';
-export const arrowParens = 'avoid';
-export const endOfLine = 'auto';
+module.exports = {
+  singleQuote: true,
+  trailingComma: 'all',
+  arrowParens: 'avoid',
+  endOfLine: 'auto',
+};
