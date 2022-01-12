@@ -1,0 +1,391 @@
+_type: export
+__export_format: 4
+__export_date: 2021-07-23T13:42:57.698Z
+__export_source: insomnia.desktop.app:v2021.4.1
+resources:
+  - _id: req_4f4013bc82f04f4094f6039de2f41870
+    parentId: fld_bbf95639de36421887831a8877f5d413
+    modified: 1625688464218
+    created: 1624905695609
+    url: "{{ base_url  }}/ops"
+    name: Create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"op_number": "00769501001",
+        	"status": "Entrega pendente"
+        }
+    parameters:
+      - name: opnumber
+        value: "00768301001"
+        description: ""
+        id: pair_a6bb216927af40a8b027955ead61c054
+        disabled: true
+      - name: status
+        value: "'Entrega pendente'"
+        description: ""
+        id: pair_68bb51be23964bdfb87ec45167134a64
+        disabled: true
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_2ac4162e206c4b4d843042c3b10f6f90
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_34803c3542444160b6d1fb9f5830284c',
+        'b64::JC50b2tlbg==::46b', 'no-history' %}"
+    metaSortKey: -1624905695609
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_bbf95639de36421887831a8877f5d413
+    parentId: wrk_0533caf897bb446abfec22ddf146e129
+    modified: 1624905687846
+    created: 1624905687846
+    name: OPs
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1624905687846
+    _type: request_group
+  - _id: wrk_0533caf897bb446abfec22ddf146e129
+    parentId: null
+    modified: 1624906553710
+    created: 1587515993931
+    name: OPMs
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_fc35ccd03958472bbdfb19c7467f34c4
+    parentId: fld_bbf95639de36421887831a8877f5d413
+    modified: 1626716069879
+    created: 1625745769593
+    url: "{{ base_url  }}/ops"
+    name: List
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - name: department
+        value: Montagem
+        description: ""
+        id: pair_68bb51be23964bdfb87ec45167134a64
+        disabled: false
+    headers: []
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_34803c3542444160b6d1fb9f5830284c',
+        'b64::JC50b2tlbg==::46b', 'no-history' %}"
+    metaSortKey: -1623214126854
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9225ff381f6b412eaafc98e3b594b1f7
+    parentId: fld_f6f2b40be8a04f2f804632bcb768233f
+    modified: 1590173982876
+    created: 1589586785137
+    url: "{{ base_url  }}/password/forgot"
+    name: Forgot Password
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "arthur.pedroti@agfequipamentos.com.br"
+        }
+    parameters: []
+    headers:
+      - id: pair_a243fb2625384bb7bba24cd139dae3b1
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1589586785137
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_f6f2b40be8a04f2f804632bcb768233f
+    parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
+    modified: 1590173980247
+    created: 1590173980247
+    name: Password
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1590173980247
+    _type: request_group
+  - _id: fld_ab0d2d6fefa14730b50b5f6a8a81db55
+    parentId: wrk_0533caf897bb446abfec22ddf146e129
+    modified: 1587778157428
+    created: 1587778157428
+    name: Users
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1587778157428
+    _type: request_group
+  - _id: req_61314829988549a290c7cc2b906182b4
+    parentId: fld_f6f2b40be8a04f2f804632bcb768233f
+    modified: 1590173983877
+    created: 1589587350162
+    url: "{{ base_url  }}/password/reset"
+    name: Reset Password
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"password": "123123",
+        	"password_confirmation": "123123",
+        	"token": "2826eede-5319-4670-bf2a-43ce831d1ba7"
+        }
+    parameters: []
+    headers:
+      - id: pair_a243fb2625384bb7bba24cd139dae3b1
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1589586785087
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_34803c3542444160b6d1fb9f5830284c
+    parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
+    modified: 1624906226390
+    created: 1587516023667
+    url: "{{ base_url  }}/sessions"
+    name: Authenticate
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"username": "arthurpedroti",
+        	"password": "123456"
+        }
+    parameters: []
+    headers:
+      - id: pair_b86773aa1f4c418b90c473fcba2b919e
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1588995802535.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_13bf0d50df6b4a4592f96b4a3606cf66
+    parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
+    modified: 1625830488952
+    created: 1587814009692
+    url: "{{ base_url  }}/users"
+    name: Register
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Calderaria",
+        	"username": "calderaria",
+        	"role": "user",
+        	"department": "Calderaria",
+        	"password": "calderaria"
+        }
+    parameters: []
+    headers:
+      - id: pair_b86773aa1f4c418b90c473fcba2b919e
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1588406713679.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_58c8a8e630f54d5e8fbe017b7d6323a0
+    parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
+    modified: 1590174488684
+    created: 1589631886454
+    url: "{{ base_url  }}/profile"
+    name: Show profile
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      token: "{% response 'body', 'req_34803c3542444160b6d1fb9f5830284c',
+        'b64::JC50b2tlbg==::46b', 'no-history' %}"
+      type: bearer
+    metaSortKey: -1588259441465.8125
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_175eb521b48d4f1695276c2e99932795
+    parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
+    modified: 1590174551380
+    created: 1589631978674
+    url: "{{ base_url  }}/profile"
+    name: Update profile
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Arthur",
+        	"email": "arthurpedroti@gmail.com",
+        	"old_password": "123456",
+        	"password": "123456",
+        	"password_confirmation": "123456"
+        }
+    parameters: []
+    headers:
+      - id: pair_fde47873458047b2b9564726818a1823
+        name: Content-Type
+        value: application/json
+    authentication:
+      token: "{% response 'body', 'req_34803c3542444160b6d1fb9f5830284c',
+        'b64::JC50b2tlbg==::46b', 'no-history' %}"
+      type: bearer
+    metaSortKey: -1588112169251.875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_047d27cc63d24788a0fe12aa182ca030
+    parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
+    modified: 1590174553602
+    created: 1587817624824
+    url: "{{ base_url  }}/users/avatar"
+    name: Update avatar
+    description: ""
+    method: PATCH
+    body:
+      mimeType: multipart/form-data
+      params:
+        - description: ""
+          fileName: C:\Users\Arthur Pedroti\Pictures\Eu\eu.jpg
+          id: pair_edb2d03b65724ce486490f6ffd0118d3
+          name: avatar
+          type: file
+          value: ""
+    parameters: []
+    headers:
+      - id: pair_ad61517956844f0eb9e96ff0d7514aca
+        name: Content-Type
+        value: multipart/form-data
+    authentication:
+      token: "{% response 'body', 'req_34803c3542444160b6d1fb9f5830284c',
+        'b64::JC50b2tlbg==::46b', 'no-history' %}"
+      type: bearer
+    metaSortKey: -1587817624824
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_f12c963ec73ddd2c39108df7bcb4bedca437e469
+    parentId: wrk_0533caf897bb446abfec22ddf146e129
+    modified: 1587515994001
+    created: 1587515994001
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1587515994001
+    _type: environment
+  - _id: jar_f12c963ec73ddd2c39108df7bcb4bedca437e469
+    parentId: wrk_0533caf897bb446abfec22ddf146e129
+    modified: 1587515994004
+    created: 1587515994004
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_688d07efe580474cb8b19525dd4a1619
+    parentId: wrk_0533caf897bb446abfec22ddf146e129
+    modified: 1618601833994
+    created: 1618601833994
+    fileName: Template
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_1d07aac1ca98480da48f92723fde7236
+    parentId: env_f12c963ec73ddd2c39108df7bcb4bedca437e469
+    modified: 1624903985735
+    created: 1587516040365
+    name: dev
+    data:
+      base_url: http://localhost:3334
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTAxNTExNzQsImV4cCI6MTU5MDIzNzU3NCwic3ViIjoiNGMyZTVjNjAtNWIyZS00ODk5LTkxYjktMzQ2Y2U0NDAzZTBkIn0.dkhCboeExTy1JB43C16hD5OSILz3rQg4hvZeTknoMmk
+    dataPropertyOrder:
+      "&":
+        - base_url
+        - token
+    color: "#7d69cb"
+    isPrivate: false
+    metaSortKey: 1587516040365
+    _type: environment
+  - _id: env_6c77b73d53554d5780f13c56a86e71ca
+    parentId: env_f12c963ec73ddd2c39108df7bcb4bedca437e469
+    modified: 1624976197842
+    created: 1590173814557
+    name: prod
+    data:
+      base_url: http://192.168.2.251:3334
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTAxNTExNzQsImV4cCI6MTU5MDIzNzU3NCwic3ViIjoiNGMyZTVjNjAtNWIyZS00ODk5LTkxYjktMzQ2Y2U0NDAzZTBkIn0.dkhCboeExTy1JB43C16hD5OSILz3rQg4hvZeTknoMmk
+    dataPropertyOrder:
+      "&":
+        - base_url
+        - token
+    color: "#00ff40"
+    isPrivate: false
+    metaSortKey: 1590173814557
+    _type: environment

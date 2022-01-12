@@ -9,8 +9,11 @@ import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepo
 import IUserTokensRepository from '@modules/users/repositories/IUserTokensRepository';
 import UserTokensRepository from '@modules/users/infra/typeorm/repositories/UserTokensRepository';
 
-import IOPsRopository from '@modules/ops/repositories/IOPsRepository';
+import IOPsRepository from '@modules/ops/repositories/IOPsRepository';
 import OPsRepository from '@modules/ops/infra/typeorm/repositories/OPsRepository';
+
+import CommitsRepository from '@modules/commits/infra/typeorm/repositories/CommitsRepository';
+import ICommitsRepository from '@modules/commits/repositories/ICommitsRepository';
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
@@ -22,4 +25,9 @@ container.registerSingleton<IUserTokensRepository>(
   UserTokensRepository,
 );
 
-container.registerSingleton<IOPsRopository>('OPsRepository', OPsRepository);
+container.registerSingleton<IOPsRepository>('OPsRepository', OPsRepository);
+
+container.registerSingleton<ICommitsRepository>(
+  'CommitsRepository',
+  CommitsRepository,
+);
