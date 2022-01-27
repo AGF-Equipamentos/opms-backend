@@ -11,6 +11,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "@sentry/node": "^6.17.2",
+    "@sentry/tracing": "^6.17.2",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
     "aws-sdk": "^2.678.0",
