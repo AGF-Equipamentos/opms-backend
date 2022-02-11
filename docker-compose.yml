@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  database_opms:
+    image: postgres
+    container_name: database_opms
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=opms
+    volumes:
+      - pgdata:/data/postgres
+  app:
+    build: .
+    container_name: opms-backend
+    ports:
+      - 3333:3333
+    volumes:
+      - .:/usr/app
+    links:
+      - database_opms
+    depends_on:
+      - database_opms
+
+volumes:
+  pgdata:
+    driver: local
