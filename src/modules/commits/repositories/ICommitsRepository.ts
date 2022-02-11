@@ -1,7 +1,7 @@
 import ICreateCommitDTO from '../dtos/ICreateDTO';
 import Commit from '../infra/typeorm/entities/Commit';
 
-export type CommitStatus = Pick<Commit, 'qty' | 'qty_delivered'>
+export type CommitStatus = Pick<Commit, 'qty' | 'qty_delivered'>;
 
 export default interface ICommitsRepository {
   create(data: ICreateCommitDTO): Promise<Commit>;

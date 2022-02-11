@@ -32,6 +32,7 @@ interface returnCreatedCommits extends OP {
 @injectable()
 class CreateOPService {
   [x: string]: any;
+
   constructor(
     @inject('OPsRepository')
     private opsRepository: IOPsRepository,
@@ -41,7 +42,11 @@ class CreateOPService {
     private commitsRepository: ICommitsRepository,
   ) {}
 
-  public async execute({ user_id, status, op_number }: IRequest): Promise<returnCreatedCommits> {
+  public async execute({
+    user_id,
+    status,
+    op_number,
+  }: IRequest): Promise<returnCreatedCommits> {
     const user = await this.usersRepository.findById(user_id);
 
     if (!user) {
@@ -80,22 +85,26 @@ class CreateOPService {
 
     const commitsArray = responseCommits.data;
 
-    const commits: Commit[] = await Promise.all(commitsArray.map(async(commit: ICommit): Promise<Commit> => {
-      const commitCreated = await this.commitsRepository.create({
-        op_id: op.id,
-        part_number: commit.CODIGO,
-        qty: commit.QUANTIDADE,
-        qty_delivered: 0,
-        location: commit.LOCACAO,
-        description: commit.DESCRICAO,
-        warehouse: commit.ARMAZEM
-      });
-      return commitCreated
-    }));
+    const commits: Commit[] = await Promise.all(
+      commitsArray.map(
+        async (commit: ICommit): Promise<Commit> => {
+          const commitCreated = await this.commitsRepository.create({
+            op_id: op.id,
+            part_number: commit.CODIGO,
+            qty: commit.QUANTIDADE,
+            qty_delivered: 0,
+            location: commit.LOCACAO,
+            description: commit.DESCRICAO,
+            warehouse: commit.ARMAZEM,
+          });
+          return commitCreated;
+        },
+      ),
+    );
 
     const opWithCommits = {
       ...op,
-      commits
+      commits,
     };
 
     return opWithCommits;

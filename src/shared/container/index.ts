@@ -15,6 +15,9 @@ import OPsRepository from '@modules/ops/infra/typeorm/repositories/OPsRepository
 import CommitsRepository from '@modules/commits/infra/typeorm/repositories/CommitsRepository';
 import ICommitsRepository from '@modules/commits/repositories/ICommitsRepository';
 
+import CriticalItemsRepository from '@modules/critical_items/infra/typeorm/repositories/CriticalItemsRepository';
+import ICriticalItemsRepository from '@modules/critical_items/repositories/ICriticalItemsRepository';
+
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
   UsersRepository,
@@ -30,4 +33,9 @@ container.registerSingleton<IOPsRepository>('OPsRepository', OPsRepository);
 container.registerSingleton<ICommitsRepository>(
   'CommitsRepository',
   CommitsRepository,
+);
+
+container.registerSingleton<ICriticalItemsRepository>(
+  'CriticalItemsRepository',
+  CriticalItemsRepository,
 );

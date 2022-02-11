@@ -5,7 +5,9 @@ import sessionsRouter from '@modules/users/infra/http/routes/sessions.routes';
 import passwordRouter from '@modules/users/infra/http/routes/password.routes';
 import profileRouter from '@modules/users/infra/http/routes/profile.routes';
 import opsRouter from '@modules/ops/infra/http/routes/ops.routes';
-import commitsRouter from '@modules/commits/infra/routes/commits.routes'
+import commitsRouter from '@modules/commits/infra/routes/commits.routes';
+import criticalItemsRouter from '@modules/critical_items/infra/criticalItems.routes';
+
 const routes = Router();
 
 // users
@@ -15,5 +17,6 @@ routes.use('/password', passwordRouter);
 routes.use('/profile', profileRouter);
 routes.use('/ops', opsRouter);
 routes.use('/commits', commitsRouter);
+routes.use('/critical-items', criticalItemsRouter);
 
 export default routes;
