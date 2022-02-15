@@ -1,3 +1,7 @@
-import { createConnections } from 'typeorm';
+import { Connection, createConnections } from 'typeorm';
 
-createConnections();
+const connection = async (): Promise<Connection[]> => {
+  return createConnections();
+};
+
+export default connection;
