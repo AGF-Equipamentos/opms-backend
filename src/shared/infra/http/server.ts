@@ -11,11 +11,12 @@ import * as Tracing from '@sentry/tracing';
 import uploadConfig from '@config/upload';
 import AppError from '@shared/errors/AppError';
 // import rateLimiter from './middlewares/rateLimiter';
+import createConnection from '@shared/infra/typeorm';
 import routes from './routes';
 
-import '@shared/infra/typeorm';
 import '@shared/container';
 
+createConnection();
 const app = express();
 
 Sentry.init({
