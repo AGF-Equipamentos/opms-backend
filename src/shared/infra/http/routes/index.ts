@@ -6,7 +6,7 @@ import passwordRouter from '@modules/users/infra/http/routes/password.routes';
 import profileRouter from '@modules/users/infra/http/routes/profile.routes';
 import opsRouter from '@modules/ops/infra/http/routes/ops.routes';
 import commitsRouter from '@modules/commits/infra/routes/commits.routes';
-import criticalItemsRouter from '@modules/critical_items/infra/criticalItems.routes';
+import criticalItemsRouter from '@modules/critical_items/infra/routes/criticalItems.routes';
 
 const routes = Router();
 

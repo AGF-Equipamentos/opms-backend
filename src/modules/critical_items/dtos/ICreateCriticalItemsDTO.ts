@@ -1,4 +1,5 @@
 export default interface ICreateCriticalItemsDTO {
+  id: string;
   part_number: string;
   description: string;
   stock_obs: string;

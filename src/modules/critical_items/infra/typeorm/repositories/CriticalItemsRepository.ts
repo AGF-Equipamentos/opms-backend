@@ -4,33 +4,50 @@ import { getRepository, Repository } from 'typeorm';
 import CriticalItems from '../entities/CriticalItems';
 
 class CriticalItemsRepository implements ICriticalItemsRepository {
-  private ormRepository: Repository<CriticalItems>;
+  private criticalItemsRepository: Repository<CriticalItems>;
 
   constructor() {
-    this.ormRepository = getRepository(CriticalItems);
+    this.criticalItemsRepository = getRepository(CriticalItems);
+  }
+
+  public async findById(id: string): Promise<CriticalItems | undefined> {
+    const criticalItems = await this.criticalItemsRepository.findOne(id);
+    return criticalItems;
   }
 
   public async create({
+    id,
     part_number,
-    description,
     stock_obs,
     purchase_obs,
     used_obs,
     responsable,
   }: ICreateCriticalItemsDTO): Promise<CriticalItems> {
-    console.log('repository');
-    const critical = this.ormRepository.create({
+    const critical = this.criticalItemsRepository.create({
+      id,
       part_number,
-      description,
       stock_obs,
       purchase_obs,
       used_obs,
       responsable,
     });
 
-    await this.ormRepository.save(critical);
+    await this.criticalItemsRepository.save(critical);
 
     return critical;
+  }
+
+  public async delete(id: CriticalItems): Promise<void> {
+    await this.criticalItemsRepository.remove(id);
+  }
+
+  public async findAll(): Promise<CriticalItems[]> {
+    const criticalItems = await this.criticalItemsRepository.find();
+    return criticalItems;
+  }
+
+  public async save(id: CriticalItems): Promise<CriticalItems> {
+    return this.criticalItemsRepository.save(id);
   }
 }
 
