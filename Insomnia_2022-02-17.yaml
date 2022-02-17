@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2021-07-23T13:42:57.698Z
-__export_source: insomnia.desktop.app:v2021.4.1
+__export_date: 2022-02-17T11:01:12.132Z
+__export_source: insomnia.desktop.app:v2021.7.2
 resources:
   - _id: req_4f4013bc82f04f4094f6039de2f41870
     parentId: fld_bbf95639de36421887831a8877f5d413
-    modified: 1625688464218
+    modified: 1645095667068
     created: 1624905695609
     url: "{{ base_url  }}/ops"
     name: Create
@@ -58,15 +58,15 @@ resources:
     _type: request_group
   - _id: wrk_0533caf897bb446abfec22ddf146e129
     parentId: null
-    modified: 1624906553710
+    modified: 1645095651377
     created: 1587515993931
-    name: OPMs
+    name: OPms
     description: ""
     scope: collection
     _type: workspace
   - _id: req_fc35ccd03958472bbdfb19c7467f34c4
     parentId: fld_bbf95639de36421887831a8877f5d413
-    modified: 1626716069879
+    modified: 1645019899130
     created: 1625745769593
     url: "{{ base_url  }}/ops"
     name: List
@@ -175,7 +175,7 @@ resources:
     _type: request
   - _id: req_34803c3542444160b6d1fb9f5830284c
     parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
-    modified: 1624906226390
+    modified: 1644934036044
     created: 1587516023667
     url: "{{ base_url  }}/sessions"
     name: Authenticate
@@ -185,8 +185,8 @@ resources:
       mimeType: application/json
       text: |-
         {
-        	"username": "arthurpedroti",
-        	"password": "123456"
+        	"username": "ronaldo",
+        	"password": "ronaldo"
         }
     parameters: []
     headers:
@@ -205,7 +205,7 @@ resources:
     _type: request
   - _id: req_13bf0d50df6b4a4592f96b4a3606cf66
     parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
-    modified: 1625830488952
+    modified: 1644934040892
     created: 1587814009692
     url: "{{ base_url  }}/users"
     name: Register
@@ -215,11 +215,11 @@ resources:
       mimeType: application/json
       text: |-
         {
-        	"name": "Calderaria",
-        	"username": "calderaria",
-        	"role": "user",
-        	"department": "Calderaria",
-        	"password": "calderaria"
+        	"name": "Ronaldo",
+        	"username": "ronaldo",
+        	"role": "admin",
+        	"department": "Ronaldo",
+        	"password": "ronaldo"
         }
     parameters: []
     headers:
@@ -238,7 +238,7 @@ resources:
     _type: request
   - _id: req_58c8a8e630f54d5e8fbe017b7d6323a0
     parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
-    modified: 1590174488684
+    modified: 1645018286425
     created: 1589631886454
     url: "{{ base_url  }}/profile"
     name: Show profile
@@ -262,9 +262,9 @@ resources:
     _type: request
   - _id: req_175eb521b48d4f1695276c2e99932795
     parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
-    modified: 1590174551380
+    modified: 1645013974033
     created: 1589631978674
-    url: "{{ base_url  }}/profile"
+    url: "{{ base_url  }}/profile/bc93c3f3-fc4f-4069-95c2-6f2054510084"
     name: Update profile
     description: ""
     method: PUT
@@ -298,7 +298,7 @@ resources:
     _type: request
   - _id: req_047d27cc63d24788a0fe12aa182ca030
     parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
-    modified: 1590174553602
+    modified: 1645013972591
     created: 1587817624824
     url: "{{ base_url  }}/users/avatar"
     name: Update avatar
@@ -323,6 +323,125 @@ resources:
         'b64::JC50b2tlbg==::46b', 'no-history' %}"
       type: bearer
     metaSortKey: -1587817624824
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_630be2b595c948cc9d9beaf188d7e131
+    parentId: fld_c131529be8884880afd9dc08d9a9664f
+    modified: 1645095639699
+    created: 1645095639699
+    url: "{{ _.baseURL }}/critical-items/0bcc669b-d453-46ad-b91c-9f45846559d6"
+    name: UpdateCriticalItems
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        		"part_number": "12350700",
+        		"description": "Presilhas",
+        		"stock_obs": "Compra não autorizada",
+        		"purchase_obs": "Sem saldo",
+        		"used_obs": "ES",
+        		"responsable": "Ronaldo"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_21767ec897454d68a7b3b32dde595da0
+    authentication: {}
+    metaSortKey: -1644957284862
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_c131529be8884880afd9dc08d9a9664f
+    parentId: wrk_0533caf897bb446abfec22ddf146e129
+    modified: 1645095639690
+    created: 1645095639690
+    name: Critical Items
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1000000000
+    _type: request_group
+  - _id: req_ff4ef9fd0f71435a859f9b1a348faf26
+    parentId: fld_c131529be8884880afd9dc08d9a9664f
+    modified: 1645095639697
+    created: 1645095639697
+    url: "{{ _.baseURL }}/critical-items/4f599e89-4ba3-4d36-bf2a-4604c8d03dc2"
+    name: DeleteCriticalItems
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1644957284812
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_4079aa687cb74424aae42847a37404d7
+    parentId: fld_c131529be8884880afd9dc08d9a9664f
+    modified: 1645095639694
+    created: 1645095639694
+    url: "{{ _.baseURL }}/critical-items"
+    name: GetAllCriticalItems
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1644957284762
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2dd683da7f7b4f368d59220c94c4f24f
+    parentId: fld_c131529be8884880afd9dc08d9a9664f
+    modified: 1645095639692
+    created: 1645095639692
+    url: "{{ _.baseURL }}/critical-items"
+    name: CreateCriticalItems
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"part_number": "Teste Valida",
+        	"stock_obs": "Sem feedback para comprar",
+          "purchase_obs": "Sem informação",
+          "used_obs": "BH",
+          "responsable": "Bruna"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_928a973eb0c940aaa422ad79773112b1
+    authentication: {}
+    metaSortKey: -1644957284712
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -359,7 +478,7 @@ resources:
     _type: api_spec
   - _id: env_1d07aac1ca98480da48f92723fde7236
     parentId: env_f12c963ec73ddd2c39108df7bcb4bedca437e469
-    modified: 1624903985735
+    modified: 1644944061318
     created: 1587516040365
     name: dev
     data:
@@ -375,7 +494,7 @@ resources:
     _type: environment
   - _id: env_6c77b73d53554d5780f13c56a86e71ca
     parentId: env_f12c963ec73ddd2c39108df7bcb4bedca437e469
-    modified: 1624976197842
+    modified: 1644944059687
     created: 1590173814557
     name: prod
     data:
