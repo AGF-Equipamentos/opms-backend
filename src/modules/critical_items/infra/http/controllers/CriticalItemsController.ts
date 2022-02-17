@@ -8,19 +8,16 @@ import { container } from 'tsyringe';
 export default class CriticalItemsController {
   public async create(request: Request, response: Response): Promise<Response> {
     const {
-      id,
       part_number,
       stock_obs,
       purchase_obs,
       used_obs,
       responsable,
     } = request.body;
-    const createCriticalItem = container.resolve(CreateCriticalItemsService);
 
+    const createCriticalItem = container.resolve(CreateCriticalItemsService);
     const result = await createCriticalItem.execute({
-      id,
       part_number,
-      description,
       stock_obs,
       purchase_obs,
       used_obs,
@@ -62,7 +59,6 @@ export default class CriticalItemsController {
     const criticalitems = await updateCriticalItems.execute({
       id,
       part_number,
-      description,
       stock_obs,
       purchase_obs,
       used_obs,

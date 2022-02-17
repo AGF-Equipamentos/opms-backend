@@ -5,9 +5,7 @@ import { CriticalItems } from '../infra/typeorm/entities/CriticalItems';
 import ICriticalItemsRepository from '../repositories/ICriticalItemsRepository';
 
 type CriticalItemsRequest = {
-  id: string;
   part_number: string;
-  description: string;
   stock_obs: string;
   purchase_obs: string;
   used_obs: string;
@@ -35,16 +33,13 @@ export default class CreateCriticalItemsService {
   ) {}
 
   async execute({
-    id,
     part_number,
-    description,
     stock_obs,
     purchase_obs,
     used_obs,
     responsable,
   }: CriticalItemsRequest): Promise<CriticalItems> {
     // axios
-
     const part_numberInformation = await axios.get<RegisterResponse[]>(
       `${process.env.APP_PROTHEUS_API_URL}/register`,
       {
