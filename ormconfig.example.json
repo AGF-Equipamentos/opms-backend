@@ -16,18 +16,5 @@
     "cli": {
       "migrationsDir": "./src/shared/infra/typeorm/migrations"
     }
-  },
-  {
-    "name": "mongo",
-    "type": "mongodb",
-    "host": "localhost",
-    "port": 27017,
-    "database": "aasm",
-    "username": "mesalva",
-    "password": "docker",
-    "useUnifiedTopology": true,
-    "entities": [
-      "./src/modules/**/infra/typeorm/schemas/*.ts"
-    ]
   }
 ]
