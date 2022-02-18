@@ -48,14 +48,11 @@ export default class CreateCriticalItemsService {
           produto: part_number,
         },
       },
-
-      // part_numberInformation.data[0].DESCRICAO;
     );
 
     const criticalitems = await this.criticalItemsRepository.create({
-      id,
       part_number,
-      description,
+      description: part_numberInformation.data[0].DESCRICAO,
       stock_obs,
       purchase_obs,
       used_obs,

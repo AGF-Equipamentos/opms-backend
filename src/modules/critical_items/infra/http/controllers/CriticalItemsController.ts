@@ -57,7 +57,6 @@ export default class CriticalItemsController {
 
     const updateCriticalItems = container.resolve(UpdateCriticalItemsService);
     const criticalitems = await updateCriticalItems.execute({
-      id,
       part_number,
       stock_obs,
       purchase_obs,

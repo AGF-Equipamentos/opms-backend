@@ -1,3 +1,4 @@
+// import { string } from '@hapi/joi';
 import AppError from '@shared/errors/AppError';
 import { inject, injectable } from 'tsyringe';
 import { CriticalItems } from '../infra/typeorm/entities/CriticalItems';
@@ -6,7 +7,6 @@ import ICriticalItemsRepository from '../repositories/ICriticalItemsRepository';
 type CriticalItemsRequest = {
   id: string;
   part_number: string;
-  description: string;
   stock_obs: string;
   purchase_obs: string;
   used_obs: string;
@@ -22,6 +22,7 @@ export default class UpdateCriticalItemsService {
 
   public async execute({
     id,
+    part_number,
     stock_obs,
     purchase_obs,
     used_obs,
@@ -32,7 +33,7 @@ export default class UpdateCriticalItemsService {
     if (!criticalitems) {
       throw new AppError('Item does not exists!');
     }
-
+    criticalitems.part_number = part_number || criticalitems.part_number; // Add esse item
     criticalitems.stock_obs = stock_obs || criticalitems.stock_obs;
     criticalitems.purchase_obs = purchase_obs || criticalitems.purchase_obs;
     criticalitems.used_obs = used_obs || criticalitems.used_obs;
