@@ -22,15 +22,27 @@ criticalItemsRouter.post(
 );
 
 criticalItemsRouter.put(
-  '/:id',
+  '/stock/:id',
   celebrate({
     [Segments.PARAMS]: {
       id: Joi.string().uuid().required(),
     },
     [Segments.BODY]: {
       stock_obs: Joi.string(),
-      purchase_obs: Joi.string(),
       used_obs: Joi.string(),
+    },
+  }),
+  criticalItemsController.update,
+);
+
+criticalItemsRouter.put(
+  '/purchase/:id',
+  celebrate({
+    [Segments.PARAMS]: {
+      id: Joi.string().uuid().required(),
+    },
+    [Segments.BODY]: {
+      purchase_obs: Joi.string(),
       responsable: Joi.string(),
     },
   }),

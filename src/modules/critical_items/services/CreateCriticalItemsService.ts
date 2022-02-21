@@ -50,6 +50,10 @@ export default class CreateCriticalItemsService {
       },
     );
 
+    if (!part_numberInformation.data[0]) {
+      throw new AppError('Part Number does not exits!');
+    }
+
     const criticalitems = await this.criticalItemsRepository.create({
       part_number,
       description: part_numberInformation.data[0].DESCRICAO,
@@ -58,10 +62,6 @@ export default class CreateCriticalItemsService {
       used_obs,
       responsable,
     });
-
-    if (!part_number) {
-      throw new AppError('Part Number does not exits!');
-    }
 
     return criticalitems;
   }

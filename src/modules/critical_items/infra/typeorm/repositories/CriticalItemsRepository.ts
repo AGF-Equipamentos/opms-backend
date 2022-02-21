@@ -16,16 +16,16 @@ class CriticalItemsRepository implements ICriticalItemsRepository {
   }
 
   public async create({
-    id,
     part_number,
+    description,
     stock_obs,
     purchase_obs,
     used_obs,
     responsable,
   }: ICreateCriticalItemsDTO): Promise<CriticalItems> {
     const critical = this.criticalItemsRepository.create({
-      id,
       part_number,
+      description,
       stock_obs,
       purchase_obs,
       used_obs,

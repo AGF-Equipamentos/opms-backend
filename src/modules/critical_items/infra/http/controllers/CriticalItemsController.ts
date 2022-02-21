@@ -6,6 +6,14 @@ import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
 export default class CriticalItemsController {
+  public async index(request: Request, response: Response): Promise<Response> {
+    const GetAllCriticalItems = container.resolve(GetAllCriticalItemsService);
+
+    const result = await GetAllCriticalItems.execute();
+
+    return response.json(result);
+  }
+
   public async create(request: Request, response: Response): Promise<Response> {
     const {
       part_number,
@@ -27,6 +35,29 @@ export default class CriticalItemsController {
     return response.json(result);
   }
 
+  public async update(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+    // console.log();
+    const {} = request.path;
+    const {
+      part_number,
+      stock_obs,
+      purchase_obs,
+      used_obs,
+      responsable,
+    } = request.body;
+    const updateCriticalItems = container.resolve(UpdateCriticalItemsService);
+    const criticalitems = await updateCriticalItems.execute({
+      id,
+      part_number,
+      stock_obs,
+      purchase_obs,
+      used_obs,
+      responsable,
+    });
+    return response.json(criticalitems);
+  }
+
   public async delete(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
 
@@ -35,34 +66,5 @@ export default class CriticalItemsController {
     const result = await deleteCriticalItems.execute({ id });
 
     return response.json(result);
-  }
-
-  public async index(request: Request, response: Response): Promise<Response> {
-    const GetAllCriticalItems = container.resolve(GetAllCriticalItemsService);
-
-    const result = await GetAllCriticalItems.execute();
-
-    return response.json(result);
-  }
-
-  public async update(request: Request, response: Response): Promise<Response> {
-    const { id } = request.params;
-    const {
-      part_number,
-      stock_obs,
-      purchase_obs,
-      used_obs,
-      responsable,
-    } = request.body;
-
-    const updateCriticalItems = container.resolve(UpdateCriticalItemsService);
-    const criticalitems = await updateCriticalItems.execute({
-      part_number,
-      stock_obs,
-      purchase_obs,
-      used_obs,
-      responsable,
-    });
-    return response.json(criticalitems);
   }
 }
