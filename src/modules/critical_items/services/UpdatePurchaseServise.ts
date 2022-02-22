@@ -6,15 +6,15 @@ import ICriticalItemsRepository from '../repositories/ICriticalItemsRepository';
 
 type CriticalItemsRequest = {
   id: string;
-  part_number: string;
-  stock_obs: string;
+  // part_number: string;
+  // stock_obs: string;
   purchase_obs: string;
-  used_obs: string;
+  // used_obs: string;
   responsable: string;
 };
 
 @injectable()
-export default class UpdateCriticalItemsService {
+export default class UpdatePurchaseService {
   constructor(
     @inject('CriticalItemsRepository')
     private criticalItemsRepository: ICriticalItemsRepository,
@@ -22,10 +22,10 @@ export default class UpdateCriticalItemsService {
 
   public async execute({
     id,
-    part_number,
-    stock_obs,
+    // part_number,
+    // stock_obs,
     purchase_obs,
-    used_obs,
+    // used_obs,
     responsable,
   }: CriticalItemsRequest): Promise<CriticalItems> {
     const criticalitems = await this.criticalItemsRepository.findById(id);
@@ -33,10 +33,10 @@ export default class UpdateCriticalItemsService {
     if (!criticalitems) {
       throw new AppError('Item does not exists!');
     }
-    criticalitems.part_number = part_number || criticalitems.part_number; // Add esse item
-    criticalitems.stock_obs = stock_obs || criticalitems.stock_obs;
+    // criticalitems.part_number = part_number || criticalitems.part_number;
+    // criticalitems.stock_obs = stock_obs || criticalitems.stock_obs;
     criticalitems.purchase_obs = purchase_obs || criticalitems.purchase_obs;
-    criticalitems.used_obs = used_obs || criticalitems.used_obs;
+    // criticalitems.used_obs = used_obs || criticalitems.used_obs;
     criticalitems.responsable = responsable || criticalitems.responsable;
 
     const updateCriticalItems = await this.criticalItemsRepository.save(

@@ -1,7 +1,8 @@
 import CreateCriticalItemsService from '@modules/critical_items/services/CreateCriticalItemsService';
 import DeleteCriticalItemsService from '@modules/critical_items/services/DeleteCriticalItemsService';
 import GetAllCriticalItemsService from '@modules/critical_items/services/GetAllCriticalItemsService';
-import UpdateCriticalItemsService from '@modules/critical_items/services/UpdateCriticalItemsServise';
+import UpdatePurchaseService from '@modules/critical_items/services/UpdatePurchaseServise';
+import UpdateStockService from '@modules/critical_items/services/UpdateStockService';
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
@@ -37,8 +38,8 @@ export default class CriticalItemsController {
 
   public async update(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
-    // console.log();
-    const {} = request.path;
+    const { path } = request;
+
     const {
       part_number,
       stock_obs,
@@ -46,7 +47,25 @@ export default class CriticalItemsController {
       used_obs,
       responsable,
     } = request.body;
+
+    if (path.split('/')[1] === 'stock') {
+      const updateCriticalItems = container.resolve(UpdateStockService);
+      const criticalitems = await updateCriticalItems.execute({
+        id,
+        stock_obs,
+        used_obs,
+      });
+    } else {
+      const updateCriticalItems = container.resolve(UpdatePurchaseService);
+      const criticalitems = await updateCriticalItems.execute({
+        id,
+        purchase_obs,
+        responsable,
+      });
+    }
+
     const updateCriticalItems = container.resolve(UpdateCriticalItemsService);
+
     const criticalitems = await updateCriticalItems.execute({
       id,
       part_number,
