@@ -40,40 +40,26 @@ export default class CriticalItemsController {
     const { id } = request.params;
     const { path } = request;
 
-    const {
-      part_number,
-      stock_obs,
-      purchase_obs,
-      used_obs,
-      responsable,
-    } = request.body;
+    const { stock_obs, purchase_obs, used_obs, responsable } = request.body;
+
+    let criticalitems = {};
 
     if (path.split('/')[1] === 'stock') {
       const updateCriticalItems = container.resolve(UpdateStockService);
-      const criticalitems = await updateCriticalItems.execute({
+      criticalitems = await updateCriticalItems.execute({
         id,
         stock_obs,
         used_obs,
       });
     } else {
       const updateCriticalItems = container.resolve(UpdatePurchaseService);
-      const criticalitems = await updateCriticalItems.execute({
+      criticalitems = await updateCriticalItems.execute({
         id,
         purchase_obs,
         responsable,
       });
     }
 
-    const updateCriticalItems = container.resolve(UpdateCriticalItemsService);
-
-    const criticalitems = await updateCriticalItems.execute({
-      id,
-      part_number,
-      stock_obs,
-      purchase_obs,
-      used_obs,
-      responsable,
-    });
     return response.json(criticalitems);
   }
 
