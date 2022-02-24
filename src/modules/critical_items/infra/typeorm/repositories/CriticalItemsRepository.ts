@@ -37,8 +37,8 @@ class CriticalItemsRepository implements ICriticalItemsRepository {
     return critical;
   }
 
-  public async delete(id: CriticalItems): Promise<void> {
-    await this.criticalItemsRepository.remove(id);
+  public async delete(critical_item: CriticalItems): Promise<void> {
+    await this.criticalItemsRepository.remove(critical_item);
   }
 
   public async findAll(): Promise<CriticalItems[]> {
@@ -46,8 +46,8 @@ class CriticalItemsRepository implements ICriticalItemsRepository {
     return criticalItems;
   }
 
-  public async save(id: CriticalItems): Promise<CriticalItems> {
-    return this.criticalItemsRepository.save(id);
+  public async save(critical_item: CriticalItems): Promise<CriticalItems> {
+    return this.criticalItemsRepository.save(critical_item);
   }
 }
 
