@@ -17,7 +17,7 @@ export default class DeleteCriticalItemsService {
     const criticalItems = await this.criticalItemsRepository.findById(id);
 
     if (!criticalItems) {
-      throw new AppError('Part Number does not exits!');
+      throw new AppError('Critical item does not exits!');
     }
 
     const deleteCriticalItems = this.criticalItemsRepository.delete(

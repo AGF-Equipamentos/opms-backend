@@ -1,18 +1,28 @@
-import usersRouter from '@modules/users/infra/http/routes/users.routes';
-import { textSpanContainsPosition } from 'typescript';
 import FakeCriticalItemsRepository from '../repositories/fakes/FakeCriticalItemsRepository';
 import UpdatePurchaseService from './UpdatePurchaseServise';
 
-let fakeCriticalItemRepository: FakeCriticalItemsRepository;
+let fakeCriticalItemsRepository: FakeCriticalItemsRepository;
 let updatePurchase: UpdatePurchaseService;
 
 describe('UpdatePurchase', () => {
   beforeEach(() => {
-    fakeCriticalItemRepository = new FakeCriticalItemsRepository();
-    updatePurchase = new UpdatePurchaseService(fakeCriticalItemRepository);
+    fakeCriticalItemsRepository = new FakeCriticalItemsRepository();
+    updatePurchase = new UpdatePurchaseService(fakeCriticalItemsRepository);
   });
-  it('should be able to update the profile', async () => {
-    const test = await fakeCriticalItemRepository.save({});
-    console.log(test);
+  it('shoud be able to update the critical item', async () => {
+  fakeCriticalItemsRepository.create({
+    purchase: 'Sem informação',
+    responsable: 'Ronaldo',
   });
+    const response = await updatePurchase.execute({
+     id,
+     purchase_obs: 'Compra atorizada',
+     responsable: 'Arthur',
+   });
+   expect(response).toMatchObject({ purchase: 'teste'});
+   expect(response).toMatchObject({ responsable: 'SP'});
+
+  it('should not be able to update a non-existing critical item', () => {});
+
+  it('should not be able to update a critical item if the responsable does not be informed', () => {});
 });

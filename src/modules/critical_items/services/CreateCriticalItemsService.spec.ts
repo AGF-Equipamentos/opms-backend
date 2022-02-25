@@ -22,4 +22,6 @@ describe('CreateCriticalItem', () => {
     });
     console.log(test);
   });
+
+  it('should not be able to create a critacal item if the part number does not exists', () => {});
 });

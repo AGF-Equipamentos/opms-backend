@@ -2,7 +2,6 @@ import { uuid } from 'uuidv4';
 
 import ICriticalItemsRepository from '@modules/critical_items/repositories/ICriticalItemsRepository';
 import ICreateCriticalItemsDTO from '@modules/critical_items/dtos/ICreateCriticalItemsDTO';
-
 import CriticalItems from '@modules/critical_items/infra/typeorm/entities/CriticalItems';
 
 class FakeCriticalItemsRepository implements ICriticalItemsRepository {

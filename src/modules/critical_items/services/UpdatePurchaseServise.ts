@@ -24,7 +24,7 @@ export default class UpdatePurchaseService {
     const criticalitems = await this.criticalItemsRepository.findById(id);
 
     if (!criticalitems) {
-      throw new AppError('Item does not exists!');
+      throw new AppError('Critical item does not exists!');
     }
 
     if (!responsable) {
