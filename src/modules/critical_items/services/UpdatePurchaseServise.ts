@@ -5,8 +5,8 @@ import ICriticalItemsRepository from '../repositories/ICriticalItemsRepository';
 
 type CriticalItemsRequest = {
   id: string;
-  purchase_obs: string;
-  responsable: string;
+  purchase_obs?: string;
+  responsable?: string;
 };
 
 @injectable()
@@ -32,7 +32,7 @@ export default class UpdatePurchaseService {
     }
 
     criticalitems.purchase_obs = purchase_obs || criticalitems.purchase_obs;
-    criticalitems.responsable = responsable || criticalitems.responsable;
+    criticalitems.responsable = responsable;
 
     const updateCriticalItems = await this.criticalItemsRepository.save(
       criticalitems,

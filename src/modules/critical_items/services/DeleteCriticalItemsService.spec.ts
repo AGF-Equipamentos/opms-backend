@@ -13,5 +13,5 @@ describe('DeleteCriticalItem', () => {
   });
   it('should be able to delete a critical item', async () => {});
 
-  it('should not be able to delete a non-existing critical item', () => {});
+  it('should not be able to delete a non-existing critical item', async () => {});
 });

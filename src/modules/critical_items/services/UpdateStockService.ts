@@ -5,8 +5,8 @@ import ICriticalItemsRepository from '../repositories/ICriticalItemsRepository';
 
 type CriticalItemsRequest = {
   id: string;
-  stock_obs: string;
-  used_obs: string;
+  stock_obs?: string;
+  used_obs?: string;
 };
 
 @injectable()
