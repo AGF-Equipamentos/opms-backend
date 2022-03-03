@@ -20,10 +20,6 @@ export default class DeleteCriticalItemsService {
       throw new AppError('Critical item does not exits!');
     }
 
-    const deleteCriticalItems = this.criticalItemsRepository.delete(
-      criticalItems,
-    );
-
-    return deleteCriticalItems;
+    this.criticalItemsRepository.delete(criticalItems);
   }
 }

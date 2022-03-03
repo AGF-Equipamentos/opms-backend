@@ -1,8 +1,27 @@
+// import AppError from '@shared/errors/AppError';
 import FakeCriticalItemsRepository from '../repositories/fakes/FakeCriticalItemsRepository';
 import CreateCriticalItemsService from './CreateCriticalItemsService';
 
 let fakeCriticalItemRepository: FakeCriticalItemsRepository;
 let createCriticalItem: CreateCriticalItemsService;
+
+jest.mock('axios', () => ({
+  get: jest.fn(() => {
+    const register = {
+      CODIGO: 'VIXMOT0011V',
+      DESCRICAO: 'MOTOR ELETRICO TRIFASICO',
+      LOCACAO: 'A1',
+      GRUPO: '3034',
+      PP: '0',
+      LE: '0',
+      UM: 'UN',
+      ESTSEG: '2',
+      APROPRI: 'I',
+      BLOQUEADO: 'FALSO',
+    };
+    return register;
+  }),
+}));
 
 describe('CreateCriticalItem', () => {
   beforeEach(() => {
@@ -12,16 +31,14 @@ describe('CreateCriticalItem', () => {
     );
   });
   it('should be able to create a new critical item', async () => {
-    const test = await fakeCriticalItemRepository.create({
+    await createCriticalItem.execute({
       part_number: 'VIXMOT0011',
       stock_obs: 'Teste',
       purchase_obs: 'Sem informação',
       used_obs: 'SP',
       responsable: 'Ronaldo',
-      description: 'teste',
     });
-    console.log(test);
   });
 
-  it('should not be able to create a critacal item if the part number does not exists', () => {});
+  it('There is no part number in our database', async () => {});
 });

@@ -49,6 +49,7 @@ export default class CreateCriticalItemsService {
         },
       },
     );
+    console.log(part_numberInformation);
 
     if (!part_numberInformation.data[0]) {
       throw new AppError('Part Number does not exits!');
