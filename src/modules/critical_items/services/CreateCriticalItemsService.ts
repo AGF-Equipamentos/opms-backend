@@ -1,6 +1,5 @@
 import AppError from '@shared/errors/AppError';
 import axios from 'axios';
-import { id } from 'date-fns/locale';
 import { inject, injectable } from 'tsyringe';
 import { CriticalItems } from '../infra/typeorm/entities/CriticalItems';
 import ICriticalItemsRepository from '../repositories/ICriticalItemsRepository';
@@ -50,27 +49,6 @@ export default class CreateCriticalItemsService {
         },
       },
     );
-
-    // axios.get(url, config)
-    // url = `${process.env.APP_PROTHEUS_API_URL}/register`
-    // config = {
-    //   params: {
-    //     filial: '0101',
-    //     produto: part_number,
-    //   },
-    // }
-
-    // if(config.params.produto === 'VIXMOT0011') {
-    // return {
-    //   data: [
-    //     {
-    //       DESCRICAO: 'test description',
-    //     },
-    //   ],
-    // };
-    // } else {
-    //   return null
-    // }
 
     if (!part_numberInformation.data[0]) {
       throw new AppError('Part Number does not exits!');
