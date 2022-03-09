@@ -8,9 +8,10 @@ import { container } from 'tsyringe';
 
 export default class CriticalItemsController {
   public async index(request: Request, response: Response): Promise<Response> {
+    const { part_number } = request.query;
     const GetAllCriticalItems = container.resolve(GetAllCriticalItemsService);
 
-    const result = await GetAllCriticalItems.execute();
+    const result = await GetAllCriticalItems.execute(part_number);
 
     return response.json(result);
   }

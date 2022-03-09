@@ -41,8 +41,8 @@ class CriticalItemsRepository implements ICriticalItemsRepository {
     await this.criticalItemsRepository.remove(critical_item);
   }
 
-  public async findAll(): Promise<CriticalItems[]> {
-    const criticalItems = await this.criticalItemsRepository.find();
+  public async findAll(part_number: string): Promise<CriticalItems[]> {
+    const criticalItems = await this.criticalItemsRepository.find(part_number);
     return criticalItems;
   }
 

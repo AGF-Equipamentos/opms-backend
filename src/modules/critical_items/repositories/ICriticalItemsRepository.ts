@@ -5,6 +5,6 @@ export default interface ICriticalItemsRepository {
   create(data: ICreateCriticalItemsDTO): Promise<CriticalItems>;
   findById(id: string): Promise<CriticalItems | undefined>;
   delete(critical_item: CriticalItems): Promise<void>;
-  findAll(): Promise<CriticalItems[]>;
+  findAll(part_number: string): Promise<CriticalItems[]>;
   save(critical_item: CriticalItems): Promise<CriticalItems>;
 }

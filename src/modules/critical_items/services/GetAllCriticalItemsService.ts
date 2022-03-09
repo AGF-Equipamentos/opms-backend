@@ -9,8 +9,10 @@ export default class GetAllCriticalItemsService {
     private criticalitmesRepository: ICriticalItemsRepository,
   ) {}
 
-  public async execute(): Promise<CriticalItems[]> {
-    const criticalitems = await this.criticalitmesRepository.findAll();
+  public async execute(part_number): Promise<CriticalItems[] | undefined> {
+    const criticalitems = await this.criticalitmesRepository.findAll(
+      part_number,
+    );
 
     return criticalitems;
   }
