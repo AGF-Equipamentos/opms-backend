@@ -11,9 +11,11 @@ export default class CriticalItemsController {
     const { part_number } = request.query;
     const GetAllCriticalItems = container.resolve(GetAllCriticalItemsService);
 
-    const result = await GetAllCriticalItems.execute(part_number);
+    const criticalItems = await GetAllCriticalItems.execute({
+      part_number: part_number as string,
+    });
 
-    return response.json(result);
+    return response.json(criticalItems);
   }
 
   public async create(request: Request, response: Response): Promise<Response> {

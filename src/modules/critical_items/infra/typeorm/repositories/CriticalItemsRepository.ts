@@ -1,5 +1,7 @@
 import ICreateCriticalItemsDTO from '@modules/critical_items/dtos/ICreateCriticalItemsDTO';
-import ICriticalItemsRepository from '@modules/critical_items/repositories/ICriticalItemsRepository';
+import ICriticalItemsRepository, {
+  FindOptions,
+} from '@modules/critical_items/repositories/ICriticalItemsRepository';
 import { getRepository, Repository } from 'typeorm';
 import CriticalItems from '../entities/CriticalItems';
 
@@ -41,8 +43,9 @@ class CriticalItemsRepository implements ICriticalItemsRepository {
     await this.criticalItemsRepository.remove(critical_item);
   }
 
-  public async findAll(part_number: string): Promise<CriticalItems[]> {
-    const criticalItems = await this.criticalItemsRepository.find(part_number);
+  public async findAll(options: FindOptions): Promise<CriticalItems[]> {
+    const criticalItems = await this.criticalItemsRepository.find(options);
+
     return criticalItems;
   }
 
