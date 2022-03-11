@@ -5,7 +5,7 @@ import UpdateStockService from './UpdateStockService';
 let fakeCriticalItemsRepository: FakeCriticalItemsRepository;
 let updateStock: UpdateStockService;
 
-describe('UpdateStock', () => {
+describe('UpdatedStock', () => {
   beforeEach(() => {
     fakeCriticalItemsRepository = new FakeCriticalItemsRepository();
     updateStock = new UpdateStockService(fakeCriticalItemsRepository);

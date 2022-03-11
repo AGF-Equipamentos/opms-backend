@@ -1,5 +1,3 @@
-// import AppError from '@shared/errors/AppError';
-// import { response } from 'express';
 import AppError from '@shared/errors/AppError';
 import FakeCriticalItemsRepository from '../repositories/fakes/FakeCriticalItemsRepository';
 import CreateCriticalItemsService from './CreateCriticalItemsService';

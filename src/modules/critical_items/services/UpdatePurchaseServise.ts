@@ -10,7 +10,7 @@ type CriticalItemsRequest = {
 };
 
 @injectable()
-export default class UpdatePurchaseService {
+export default class UpdatedPurchaseServise {
   constructor(
     @inject('CriticalItemsRepository')
     private criticalItemsRepository: ICriticalItemsRepository,
@@ -34,10 +34,10 @@ export default class UpdatePurchaseService {
     criticalitems.purchase_obs = purchase_obs || criticalitems.purchase_obs;
     criticalitems.responsable = responsable;
 
-    const updateCriticalItems = await this.criticalItemsRepository.save(
+    const updatedCriticalItems = await this.criticalItemsRepository.save(
       criticalitems,
     );
 
-    return updateCriticalItems;
+    return updatedCriticalItems;
   }
 }
