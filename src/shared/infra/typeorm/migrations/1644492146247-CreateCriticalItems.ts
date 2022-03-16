@@ -25,18 +25,22 @@ export default class CreateCriticalItems1644492146247
           {
             name: 'stock_obs',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'purchase_obs',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'used_obs',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'responsable',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'created_at',
