@@ -43,7 +43,13 @@ export default class CriticalItemsController {
     const { id } = request.params;
     const { path } = request;
 
-    const { stock_obs, purchase_obs, used_obs, responsable } = request.body;
+    const {
+      stock_obs,
+      purchase_obs,
+      used_obs,
+      responsable,
+      description,
+    } = request.body;
 
     let criticalitems = {};
 
@@ -51,6 +57,7 @@ export default class CriticalItemsController {
       const updateCriticalItems = container.resolve(UpdateStockService);
       criticalitems = await updateCriticalItems.execute({
         id,
+        description,
         stock_obs,
         used_obs,
       });
@@ -58,6 +65,7 @@ export default class CriticalItemsController {
       const updateCriticalItems = container.resolve(UpdatePurchaseService);
       criticalitems = await updateCriticalItems.execute({
         id,
+        description,
         purchase_obs,
         responsable,
       });

@@ -6,6 +6,7 @@ import ICriticalItemsRepository from '../repositories/ICriticalItemsRepository';
 type CriticalItemsRequest = {
   id: string;
   stock_obs?: string;
+  description?: string;
   used_obs?: string;
 };
 
@@ -19,6 +20,7 @@ export default class UpdateStockService {
   public async execute({
     id,
     stock_obs,
+    description,
     used_obs,
   }: CriticalItemsRequest): Promise<CriticalItems> {
     const criticalitems = await this.criticalItemsRepository.findById(id);
@@ -29,6 +31,7 @@ export default class UpdateStockService {
 
     criticalitems.stock_obs = stock_obs || criticalitems.stock_obs;
     criticalitems.used_obs = used_obs || criticalitems.used_obs;
+    criticalitems.description = description || criticalitems.description;
 
     const updateCriticalItems = await this.criticalItemsRepository.save(
       criticalitems,

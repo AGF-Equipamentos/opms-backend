@@ -25,10 +25,12 @@ describe('UpdatedStock', () => {
       id: critical_item.id,
       stock_obs: 'Teste_1',
       used_obs: 'ES',
+      description: 'Nova descrição',
     });
 
     expect(response.stock_obs).toBe('Teste_1');
     expect(response.used_obs).toBe('ES');
+    expect(response.description).toBe('Nova descrição');
   });
 
   it('shoud be able to does not modified if one or more properties not be informed', async () => {

@@ -35,7 +35,7 @@ describe('GetAllCriticalItem', () => {
       responsable: 'Ronaldo',
       description: 'teste',
     });
-    const response = await getAll.execute();
+    const response = await getAll.execute({});
 
     expect(response).toStrictEqual([
       critical_item,

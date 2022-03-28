@@ -24,10 +24,12 @@ describe('UpdatePurchase', () => {
       id: critical_item.id,
       purchase_obs: 'Compra atorizada',
       responsable: 'Arthur',
+      description: 'Nova descrição',
     });
 
     expect(response.purchase_obs).toBe('Compra atorizada');
     expect(response.responsable).toBe('Arthur');
+    expect(response.description).toBe('Nova descrição');
   });
 
   it('shoud be able to does not modified if one or more properties not be informed', async () => {
@@ -52,6 +54,7 @@ describe('UpdatePurchase', () => {
       updatePurchase.execute({
         id: 'non-existing-the-id',
         purchase_obs: 'Compra atorizada',
+        description: 'teste',
         responsable: 'Ronaldo',
       }),
     ).rejects.toBeInstanceOf(AppError);
@@ -70,6 +73,7 @@ describe('UpdatePurchase', () => {
       updatePurchase.execute({
         id: critical_item.id,
         purchase_obs: 'compra atorizada',
+        description: 'test',
       }),
     ).rejects.toBeInstanceOf(AppError);
   });

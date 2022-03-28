@@ -5,6 +5,7 @@ import CriticalItemsController from '../http/controllers/CriticalItemsController
 const criticalItemsRouter = Router();
 const criticalItemsController = new CriticalItemsController();
 
+// adicionar celebrate query params
 criticalItemsRouter.get('/', criticalItemsController.index);
 
 criticalItemsRouter.post(
@@ -29,6 +30,7 @@ criticalItemsRouter.put(
     },
     [Segments.BODY]: {
       stock_obs: Joi.string(),
+      description: Joi.string(),
       used_obs: Joi.string(),
     },
   }),
@@ -43,6 +45,7 @@ criticalItemsRouter.put(
     },
     [Segments.BODY]: {
       purchase_obs: Joi.string(),
+      description: Joi.string(),
       responsable: Joi.string(),
     },
   }),
