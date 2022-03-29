@@ -6,7 +6,17 @@ const criticalItemsRouter = Router();
 const criticalItemsController = new CriticalItemsController();
 
 // adicionar celebrate query params
-criticalItemsRouter.get('/', criticalItemsController.index);
+criticalItemsRouter.get(
+  '/',
+  celebrate({
+    [Segments.QUERY]: {
+      part_number: Joi.string(),
+      description: Joi.string(),
+      responsable: Joi.string(),
+    },
+  }),
+  criticalItemsController.index,
+);
 
 criticalItemsRouter.post(
   '/',

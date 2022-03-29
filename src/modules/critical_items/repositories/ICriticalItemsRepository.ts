@@ -3,6 +3,8 @@ import CriticalItems from '../infra/typeorm/entities/CriticalItems';
 
 export type FindOptions = {
   part_number?: string;
+  description?: string;
+  responsable?: string;
 };
 
 export default interface ICriticalItemsRepository {
