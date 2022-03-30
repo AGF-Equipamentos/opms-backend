@@ -8,9 +8,7 @@ import { container } from 'tsyringe';
 
 export default class CriticalItemsController {
   public async index(request: Request, response: Response): Promise<Response> {
-    const { part_number } = request.query;
-    const { description } = request.query;
-    const { responsable } = request.query;
+    const { part_number, description, responsable } = request.query;
     const GetAllCriticalItems = container.resolve(GetAllCriticalItemsService);
 
     const criticalItems = await GetAllCriticalItems.execute({
@@ -33,11 +31,11 @@ export default class CriticalItemsController {
 
     const createCriticalItem = container.resolve(CreateCriticalItemsService);
     const result = await createCriticalItem.execute({
-      part_number,
-      stock_obs,
-      purchase_obs,
-      used_obs,
-      responsable,
+      part_number: part_number.toUpperCase().trim(),
+      stock_obs: stock_obs.toUpperCase().trim(),
+      purchase_obs: purchase_obs.toUpperCase().trim(),
+      used_obs: used_obs.toUpperCase().trim(),
+      responsable: responsable.toUpperCase().trim(),
     });
 
     return response.json(result);
@@ -61,17 +59,17 @@ export default class CriticalItemsController {
       const updateCriticalItems = container.resolve(UpdateStockService);
       criticalitems = await updateCriticalItems.execute({
         id,
-        description,
-        stock_obs,
-        used_obs,
+        description: description.toUpperCase().trim(),
+        stock_obs: stock_obs.toUpperCase().trim(),
+        used_obs: used_obs.toUpperCase().trim(),
       });
     } else {
       const updateCriticalItems = container.resolve(UpdatePurchaseService);
       criticalitems = await updateCriticalItems.execute({
         id,
-        description,
-        purchase_obs,
-        responsable,
+        description: description.toUpperCase().trim(),
+        purchase_obs: purchase_obs.toUpperCase().trim(),
+        responsable: responsable.toUpperCase().trim(),
       });
     }
 

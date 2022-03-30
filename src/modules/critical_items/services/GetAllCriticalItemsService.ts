@@ -1,4 +1,6 @@
+// import { Postgres } from '@sentry/tracing/dist/integrations';
 import { inject, injectable } from 'tsyringe';
+// import { Like } from 'typeorm';
 import CriticalItems from '../infra/typeorm/entities/CriticalItems';
 import ICriticalItemsRepository from '../repositories/ICriticalItemsRepository';
 
@@ -21,6 +23,12 @@ export default class GetAllCriticalItemsService {
     responsable,
   }: GetItemsRequest): Promise<CriticalItems[] | undefined> {
     const queryOptions = {};
+    //    Utilizar o Like aqui
+    // const queryOptions = await dataSource(Postgres).findAll({
+    //   part_number: Like('%a'),
+    //   description: Like('%a'),
+    //   responsable: Like('%a'),
+    // });
 
     if (part_number) {
       Object.assign(queryOptions, {
@@ -38,6 +46,7 @@ export default class GetAllCriticalItemsService {
       });
     }
 
+    //  console.log(queryOptions);
     const criticalitems = await this.criticalitmesRepository.findAll(
       queryOptions,
     );
