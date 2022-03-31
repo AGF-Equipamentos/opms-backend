@@ -1,6 +1,7 @@
 import { uuid } from 'uuidv4';
-
-import ICriticalItemsRepository from '@modules/critical_items/repositories/ICriticalItemsRepository';
+import ICriticalItemsRepository, {
+  FindOptions,
+} from '@modules/critical_items/repositories/ICriticalItemsRepository';
 import ICreateCriticalItemsDTO from '@modules/critical_items/dtos/ICreateCriticalItemsDTO';
 import CriticalItems from '@modules/critical_items/infra/typeorm/entities/CriticalItems';
 
@@ -47,7 +48,21 @@ class FakeCriticalItemsRepository implements ICriticalItemsRepository {
     this.critical_items.splice(findIndex, 1);
   }
 
-  public async findAll(): Promise<CriticalItems[]> {
+  public async findAll(options: FindOptions): Promise<CriticalItems[]> {
+    const filterItems = this.critical_items
+      .filter
+
+      //   if(options === 'part_number'){
+      //     itemsOptions => itemsOptions.part_number === options.part_number
+      //   }
+      //   if(options === 'description'){
+      //     itemsOptions => itemsOptions .description === options.description
+      //   }
+      //   if( options  === 'respondable' ){
+      //     itemsOptions => itemsOptions.responsable === options.responsable
+      //   }
+      ();
+
     return this.critical_items;
   }
 
