@@ -49,20 +49,13 @@ class FakeCriticalItemsRepository implements ICriticalItemsRepository {
   }
 
   public async findAll(options: FindOptions): Promise<CriticalItems[]> {
-    const filterItems = this.critical_items
-      .filter
-
-      //   if(options === 'part_number'){
-      //     itemsOptions => itemsOptions.part_number === options.part_number
-      //   }
-      //   if(options === 'description'){
-      //     itemsOptions => itemsOptions .description === options.description
-      //   }
-      //   if( options  === 'respondable' ){
-      //     itemsOptions => itemsOptions.responsable === options.responsable
-      //   }
-      ();
-
+    // Recebe o valor atual filter(critical_items)
+    // console.log(options.part_number?._value as string);
+    // if (options.part_number) {
+    //   const filterItems = this.critical_items.filter(critical_items => {
+    //     return critical_items.part_number?.includes('description');
+    //   });
+    // }
     return this.critical_items;
   }
 

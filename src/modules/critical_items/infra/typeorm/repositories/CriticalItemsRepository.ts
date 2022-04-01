@@ -2,7 +2,7 @@ import ICreateCriticalItemsDTO from '@modules/critical_items/dtos/ICreateCritica
 import ICriticalItemsRepository, {
   FindOptions,
 } from '@modules/critical_items/repositories/ICriticalItemsRepository';
-import { getRepository, Repository } from 'typeorm';
+import { FindManyOptions, getRepository, Repository } from 'typeorm';
 import CriticalItems from '../entities/CriticalItems';
 
 class CriticalItemsRepository implements ICriticalItemsRepository {
@@ -43,7 +43,9 @@ class CriticalItemsRepository implements ICriticalItemsRepository {
 
   public async findAll(options: FindOptions): Promise<CriticalItems[]> {
     // console.log(options);
-    const criticalItems = await this.criticalItemsRepository.find(options);
+    const criticalItems = await this.criticalItemsRepository.find(
+      options as FindManyOptions,
+    );
 
     return criticalItems;
   }
