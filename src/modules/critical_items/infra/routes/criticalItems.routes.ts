@@ -6,6 +6,7 @@ const criticalItemsRouter = Router();
 const criticalItemsController = new CriticalItemsController();
 
 // adicionar celebrate query params
+// fazer o dowloand igual ao get
 criticalItemsRouter.get(
   '/',
   celebrate({

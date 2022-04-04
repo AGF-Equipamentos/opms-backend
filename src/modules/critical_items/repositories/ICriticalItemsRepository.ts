@@ -10,13 +10,27 @@ export type FindOptions = {
     _getSql: undefined;
     _objetctLiteralParameters: undefined;
   };
-  description?: string;
-  responsable?: string;
+  description?: {
+    _type: string;
+    _value: string;
+    _useParameters: boolean;
+    _multipleParameters: boolean;
+    _getSql: undefined;
+    _objetctLiteralParameters: undefined;
+  };
+  responsable?: {
+    _type: string;
+    _value: string;
+    _useParamenters: boolean;
+    _multipleParameters: boolean;
+    _getSql: undefined;
+    _objetctLiteralParameters: undefined;
+  };
 };
 export default interface ICriticalItemsRepository {
   create(data: ICreateCriticalItemsDTO): Promise<CriticalItems>;
   findById(id: string): Promise<CriticalItems | undefined>;
   delete(critical_item: CriticalItems): Promise<void>;
-  findAll(options: FindOptions): Promise<CriticalItems[]>;
+  findAll(options?: FindOptions): Promise<CriticalItems[]>;
   save(critical_item: CriticalItems): Promise<CriticalItems>;
 }

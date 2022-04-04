@@ -39,7 +39,6 @@ export default class GetAllCriticalItemsService {
       });
     }
 
-    //  console.log(queryOptions);
     const criticalitems = await this.criticalitmesRepository.findAll(
       queryOptions,
     );

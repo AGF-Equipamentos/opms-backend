@@ -48,15 +48,39 @@ class FakeCriticalItemsRepository implements ICriticalItemsRepository {
     this.critical_items.splice(findIndex, 1);
   }
 
-  public async findAll(options: FindOptions): Promise<CriticalItems[]> {
-    // Recebe o valor atual filter(critical_items)
-    // console.log(options.part_number?._value as string);
-    // if (options.part_number) {
-    //   const filterItems = this.critical_items.filter(critical_items => {
-    //     return critical_items.part_number?.includes('description');
-    //   });
-    // }
-    return this.critical_items;
+  public async findAll(options?: FindOptions): Promise<CriticalItems[]> {
+    const filterItems = this.critical_items.filter(critical_items => {
+      if (options?.part_number) {
+        const pnValidation = critical_items.part_number?.includes(
+          options?.part_number?._value.slice(1, -1) as string,
+        );
+        if (!pnValidation) {
+          return false;
+        }
+      }
+
+      if (options?.description) {
+        const pnValidation = critical_items.description?.includes(
+          options?.description?._value.slice(1, -1) as string,
+        );
+        if (!pnValidation) {
+          return false;
+        }
+      }
+
+      if (options?.responsable) {
+        const pnValidation = critical_items.responsable?.includes(
+          options?.responsable?._value.slice(1, -1) as string,
+        );
+        if (!pnValidation) {
+          return false;
+        }
+      }
+
+      return true;
+    });
+
+    return filterItems;
   }
 
   public async save(critical_item: CriticalItems): Promise<CriticalItems> {
