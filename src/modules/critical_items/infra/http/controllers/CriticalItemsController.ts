@@ -1,5 +1,6 @@
 import CreateCriticalItemsService from '@modules/critical_items/services/CreateCriticalItemsService';
 import DeleteCriticalItemsService from '@modules/critical_items/services/DeleteCriticalItemsService';
+// import DownloadExcelCriticalItemsSevice from '@modules/critical_items/services/DownloadExcelCriticalItems';
 import GetAllCriticalItemsService from '@modules/critical_items/services/GetAllCriticalItemsService';
 import UpdatePurchaseService from '@modules/critical_items/services/UpdatePurchaseServise';
 import UpdateStockService from '@modules/critical_items/services/UpdateStockService';
@@ -10,7 +11,6 @@ export default class CriticalItemsController {
   public async index(request: Request, response: Response): Promise<Response> {
     const { part_number, description, responsable } = request.query;
     const GetAllCriticalItems = container.resolve(GetAllCriticalItemsService);
-
     const criticalItems = await GetAllCriticalItems.execute({
       part_number: part_number as string,
       description: description as string,
@@ -85,4 +85,27 @@ export default class CriticalItemsController {
 
     return response.json(result);
   }
+
+  // public async get(request: Request, response: Response): Promise<Response> {
+  //   const { part_number, description, responsable } = request.query;
+  //   const DownloadExcelCriticalItems = container.resolve(
+  //     DownloadExcelCriticalItemsSevice,
+  //   );
+  //   await DownloadExcelCriticalItems.execute({
+  //     part_number: part_number as string,
+  //     description: description as string,
+  //     responsable: responsable as string,
+  //   });
+  //   response.setHeader(
+  //     'Content-Type',
+  //     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  //   );
+  //   response.setHeader(
+  //     'Content-Disposition',
+  //     `attachment; filename=users.xlsx`,
+  //   );
+  //   return workbook.xlsx.write(response).then(() => {
+  //     response.status(200);
+  //   });
+  // }
 }
