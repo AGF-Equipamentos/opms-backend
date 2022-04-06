@@ -47,28 +47,48 @@ export default class DownloadExcelCriticalItemsSevice {
     const worksheet = workbook.addWorksheet('Itens Críticos');
 
     worksheet.columns = [
-      { header: 'Número da Peça', key: 'part_number', width: 10 },
-      { header: 'Descrição do Item', key: 'description', width: 10 },
-      { header: 'Observação do Estoque', key: 'stock_obs', width: 10 },
-      { header: 'Observação de Compras', key: 'purchase_obs', width: 10 },
-      { header: 'Usado', key: 'used_obs', width: 10 },
-      { header: 'Rsponsável', key: 'responsable', width: 10 },
-      { header: 'Criado', key: 'created_at', width: 10 },
-      { header: 'Ult.Atual', key: 'updated_at', width: 10 },
+      { header: 'Número da Peça', key: 'part_number', width: 15 },
+      { header: 'Descrição do Item', key: 'description', width: 70 },
+      { header: 'Observação do Estoque', key: 'stock_obs', width: 25 },
+      { header: 'Observação de Compras', key: 'purchase_obs', width: 25 },
+      { header: 'Usado', key: 'used_obs', width: 15 },
+      { header: 'Rsponsável', key: 'responsable', width: 15 },
+      { header: 'Criado', key: 'created_at', width: 15 },
+      { header: 'Ult.Atual', key: 'updated_at', width: 15 },
     ];
 
     criticalitems.forEach(critical_item => {
       worksheet.addRow(critical_item); // pra cada item criar um linha
     });
 
-    worksheet.getRow(1).eachCell(cell => {
-      const newCell = {
-        ...cell,
-        font: { bold: true },
-      };
+    // http://localhost:3334/critical-items/download
 
-      return newCell;
+    worksheet.getRow(1).eachCell({ includeEmpty: true }, cell => {
+      Object.assign(
+        cell,
+        { font: { bold: true } },
+        {
+          fill: {
+            type: 'pattern',
+            pattern: 'solid',
+            fgColor: { argb: 'DAEEF3' },
+          },
+        },
+      );
     });
+
+    worksheet.eachRow(row =>
+      row.eachCell(cell =>
+        Object.assign(cell, {
+          border: {
+            top: { style: 'thin' },
+            left: { style: 'thin' },
+            bottom: { style: 'thin' },
+            right: { style: 'thin' },
+          },
+        }),
+      ),
+    );
 
     return workbook;
   }

@@ -7,17 +7,6 @@ const criticalItemsController = new CriticalItemsController();
 
 // adicionar celebrate query params
 // fazer o dowloand igual ao get
-// criticalItemsRouter.get(
-//   '/',
-//   celebrate({
-//     [Segments.QUERY]: {
-//       part_number: Joi.string(),
-//       description: Joi.string(),
-//       responsable: Joi.string(),
-//     },
-//   }),
-//   criticalItemsController.index,
-// );
 
 criticalItemsRouter.get(
   '/',
@@ -29,6 +18,18 @@ criticalItemsRouter.get(
     },
   }),
   criticalItemsController.index,
+);
+
+criticalItemsRouter.get(
+  '/download',
+  celebrate({
+    [Segments.QUERY]: {
+      part_number: Joi.string(),
+      description: Joi.string(),
+      responsable: Joi.string(),
+    },
+  }),
+  criticalItemsController.download,
 );
 
 criticalItemsRouter.post(
