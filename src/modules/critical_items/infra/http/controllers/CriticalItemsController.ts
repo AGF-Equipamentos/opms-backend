@@ -32,8 +32,8 @@ export default class CriticalItemsController {
     const createCriticalItem = container.resolve(CreateCriticalItemsService);
     const result = await createCriticalItem.execute({
       part_number: part_number.toUpperCase().trim(),
-      stock_obs: stock_obs.trim(),
-      purchase_obs: purchase_obs.trim(),
+      stock_obs: stock_obs?.trim(),
+      purchase_obs: purchase_obs?.trim(),
       used_obs: used_obs.toUpperCase().trim(),
       responsable: responsable.toUpperCase().trim(),
     });
@@ -59,16 +59,16 @@ export default class CriticalItemsController {
       const updateCriticalItems = container.resolve(UpdateStockService);
       criticalitems = await updateCriticalItems.execute({
         id,
-        description: description.toUpperCase().trim(),
-        stock_obs: stock_obs.trim(),
-        used_obs: used_obs.toUpperCase().trim(),
+        description: description?.toUpperCase().trim(),
+        stock_obs: stock_obs?.trim(),
+        used_obs: used_obs?.toUpperCase().trim(),
       });
     } else {
       const updateCriticalItems = container.resolve(UpdatePurchaseService);
       criticalitems = await updateCriticalItems.execute({
         id,
-        description: description.toUpperCase().trim(),
-        purchase_obs: purchase_obs.trim(),
+        description: description?.toUpperCase().trim(),
+        purchase_obs: purchase_obs?.trim(),
         responsable: responsable.toUpperCase().trim(),
       });
     }
