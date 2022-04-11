@@ -34,8 +34,8 @@ export default class CriticalItemsController {
       part_number: part_number.toUpperCase().trim(),
       stock_obs: stock_obs?.trim(),
       purchase_obs: purchase_obs?.trim(),
-      used_obs: used_obs.toUpperCase().trim(),
-      responsable: responsable.toUpperCase().trim(),
+      used_obs: used_obs?.toUpperCase().trim(),
+      responsable: responsable?.toUpperCase().trim(),
     });
 
     return response.json(result);
