@@ -24,6 +24,8 @@
       "prettier.config.js",
       "babel.config.js",
       "ecosystem.config.js",
-      "dist/**"
+      "dist/**",
+      "coverage/**",
+      "node_modules/**"
   ]
 }
