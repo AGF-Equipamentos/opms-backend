@@ -1,6 +1,6 @@
 import CreateCriticalItemsService from '@modules/critical_items/services/CreateCriticalItemsService';
 import DeleteCriticalItemsService from '@modules/critical_items/services/DeleteCriticalItemsService';
-import DownloadExcelCriticalItemsSevice from '@modules/critical_items/services/DownloadExcelCriticalItems';
+import DownloadExcelCriticalItemsSevice from '@modules/critical_items/services/DownloadExcelCriticalItemsService';
 import GetAllCriticalItemsService from '@modules/critical_items/services/GetAllCriticalItemsService';
 import UpdatePurchaseService from '@modules/critical_items/services/UpdatePurchaseServise';
 import UpdateStockService from '@modules/critical_items/services/UpdateStockService';
