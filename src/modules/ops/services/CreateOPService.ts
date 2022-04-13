@@ -31,6 +31,7 @@ interface returnCreatedCommits extends OP {
 
 @injectable()
 class CreateOPService {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [x: string]: any;
 
   constructor(

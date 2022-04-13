@@ -11,7 +11,6 @@ import OP from '@modules/ops/infra/typeorm/entities/OP';
 
 @Entity('commits')
 class Commit {
-
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
