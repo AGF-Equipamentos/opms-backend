@@ -8,13 +8,15 @@
     "start": "ts-node -r tsconfig-paths/register src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
-    "test": "jest"
+    "test": "jest --maxWorkers=50%",
+    "test:watch": "jest --watch --maxWorkers=25%",
+    "lint": "eslint src --max-warnings=0"
   },
   "dependencies": {
     "@sentry/node": "^6.17.2",
     "@sentry/tracing": "^6.17.2",
-    "@typescript-eslint/eslint-plugin": "^2.29.0",
-    "@typescript-eslint/parser": "^2.29.0",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
     "aws-sdk": "^2.678.0",
     "axios": "^0.20.0",
     "bcryptjs": "^2.4.3",
@@ -69,7 +71,7 @@
     "babel-plugin-transform-typescript-metadata": "^0.3.0",
     "commitizen": "^4.0.4",
     "cz-conventional-changelog": "3.1.0",
-    "eslint": "^6.8.0",
+    "eslint": "^8.13.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-prettier": "^3.1.3",
