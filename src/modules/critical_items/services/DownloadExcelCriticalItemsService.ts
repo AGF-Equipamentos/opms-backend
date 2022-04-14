@@ -89,7 +89,7 @@ export default class DownloadExcelCriticalItemsService {
         }),
       ),
     );
-    // console.log(workbook);
+
     return workbook;
   }
 }

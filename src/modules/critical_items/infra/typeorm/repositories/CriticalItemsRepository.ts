@@ -44,7 +44,6 @@ class CriticalItemsRepository implements ICriticalItemsRepository {
   }
 
   public async findAll(options?: FindOptions): Promise<CriticalItems[]> {
-    // console.log(options);
     const criticalItems = await this.criticalItemsRepository.find(
       options as FindManyOptions,
     );
