@@ -23,7 +23,7 @@ jobs:
       run: yarn lint --fix
 
     - name: Runnig tests
-      run: yarn test --findRelatedTests --bail
+      run: yarn test --bail
 
     - name: Run build
       run: yarn build

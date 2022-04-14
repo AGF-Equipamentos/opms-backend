@@ -6,7 +6,7 @@ Workbook {
     "matrixMap": Object {},
   },
   "_worksheets": Array [
-    undefined,
+    ,
     Worksheet {
       "_columns": Array [
         Column {
@@ -887,7 +887,7 @@ Workbook {
     "matrixMap": Object {},
   },
   "_worksheets": Array [
-    undefined,
+    ,
     Worksheet {
       "_columns": Array [
         Column {
@@ -1768,7 +1768,7 @@ Workbook {
     "matrixMap": Object {},
   },
   "_worksheets": Array [
-    undefined,
+    ,
     Worksheet {
       "_columns": Array [
         Column {
