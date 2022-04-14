@@ -92,5 +92,4 @@ class FakeCriticalItemsRepository implements ICriticalItemsRepository {
     return critical_item;
   }
 }
-
 export default FakeCriticalItemsRepository;

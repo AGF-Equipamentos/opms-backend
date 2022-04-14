@@ -1,6 +1,6 @@
 import CreateCriticalItemsService from '@modules/critical_items/services/CreateCriticalItemsService';
 import DeleteCriticalItemsService from '@modules/critical_items/services/DeleteCriticalItemsService';
-import DownloadExcelCriticalItemsSevice from '@modules/critical_items/services/DownloadExcelCriticalItemsService';
+import DownloadExcelCriticalItemsService from '@modules/critical_items/services/DownloadExcelCriticalItemsService';
 import GetAllCriticalItemsService from '@modules/critical_items/services/GetAllCriticalItemsService';
 import UpdatePurchaseService from '@modules/critical_items/services/UpdatePurchaseServise';
 import UpdateStockService from '@modules/critical_items/services/UpdateStockService';
@@ -91,10 +91,10 @@ export default class CriticalItemsController {
     response: Response,
   ): Promise<Response> {
     const { part_number, description, responsable } = request.query;
-    const DownloadExcelCriticalItems = container.resolve(
-      DownloadExcelCriticalItemsSevice,
+    const downloadExcelCriticalItems = container.resolve(
+      DownloadExcelCriticalItemsService,
     );
-    const workbook = await DownloadExcelCriticalItems.execute({
+    const workbook = await downloadExcelCriticalItems.execute({
       part_number: part_number as string,
       description: description as string,
       responsable: responsable as string,

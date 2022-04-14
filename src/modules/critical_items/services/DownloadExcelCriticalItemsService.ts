@@ -10,7 +10,7 @@ type DownloadItemsRequest = {
 };
 
 @injectable()
-export default class DownloadExcelCriticalItemsSevice {
+export default class DownloadExcelCriticalItemsService {
   constructor(
     @inject('CriticalItemsRepository')
     private criticalitmesRepository: ICriticalItemsRepository,
@@ -89,7 +89,7 @@ export default class DownloadExcelCriticalItemsSevice {
         }),
       ),
     );
-
+    // console.log(workbook);
     return workbook;
   }
 }
