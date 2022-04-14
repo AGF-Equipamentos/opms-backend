@@ -12,6 +12,7 @@ module.exports = {
     "text-summary",
     "lcov",
   ],
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/src/' }),
   preset: 'ts-jest',
   testEnvironment: "node",
   testMatch: [
