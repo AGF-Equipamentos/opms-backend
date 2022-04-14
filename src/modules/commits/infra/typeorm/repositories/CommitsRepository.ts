@@ -23,7 +23,7 @@ class CommitsRepository implements ICommitsRepository {
   public async findCommitsID(id: string[]): Promise<Commit[] | undefined> {
     const commit = await this.ormRepository.find({
       where: id.map(idItem => {
-        return { idItem };
+        return { id: idItem };
       }),
     });
 
