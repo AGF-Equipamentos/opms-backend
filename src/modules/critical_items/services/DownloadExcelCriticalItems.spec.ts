@@ -41,9 +41,9 @@ describe('downloadExcelCriticalItems', () => {
       part_number: 'VIXABR0014',
     });
 
-    // @ts-expect-error
+    // @ts-expect-error: removing dates generates to dont break the test
     delete workbook.created;
-    // @ts-expect-error
+    // @ts-expect-error: removing dates generates to dont break the test
     delete workbook.modified;
 
     expect(workbook).toMatchSnapshot();
@@ -78,9 +78,9 @@ describe('downloadExcelCriticalItems', () => {
       description: 'Olá',
     });
 
-    // @ts-expect-error
+    // @ts-expect-error: removing dates generates to dont break the test
     delete workbook.created;
-    // @ts-expect-error
+    // @ts-expect-error: removing dates generates to dont break the test
     delete workbook.modified;
 
     expect(workbook).toMatchSnapshot();
@@ -115,9 +115,9 @@ describe('downloadExcelCriticalItems', () => {
       responsable: 'Katriel',
     });
 
-    // @ts-expect-error
+    // @ts-expect-error: removing dates generates to dont break the test
     delete workbook.created;
-    // @ts-expect-error
+    // @ts-expect-error: removing dates generates to dont break the test
     delete workbook.modified;
 
     expect(workbook).toMatchSnapshot();
