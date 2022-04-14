@@ -11,7 +11,7 @@ describe('downloadExcelCriticalItems', () => {
       fakeCriticalItemRepository,
     );
   });
-  it('should able to lower a spreadsheet', async () => {
+  it('should able to lower a spreadsheet "part_number"', async () => {
     await fakeCriticalItemRepository.create({
       part_number: 'FVPG02076',
       stock_obs: 'Teste',
@@ -22,28 +22,34 @@ describe('downloadExcelCriticalItems', () => {
     });
     await fakeCriticalItemRepository.create({
       part_number: 'SBM3060F212',
-      stock_obs: 'teste',
+      stock_obs: 'Teste',
       purchase_obs: 'Compra não autorizada',
       used_obs: 'SP',
       responsable: 'Katriel',
       description: 'Espero que de certo',
     });
-    const critical_items1 = await fakeCriticalItemRepository.create({
+    await fakeCriticalItemRepository.create({
       part_number: 'VIXABR0014',
-      stock_obs: 'teste',
+      stock_obs: 'Teste',
       purchase_obs: 'Compra autorizada',
       used_obs: 'SP',
       responsable: 'Arthur',
       description: 'Deu certooo!!!!!',
     });
-    const response = await downloadExcelCriticalItems.execute({
+
+    const workbook = await downloadExcelCriticalItems.execute({
       part_number: 'VIXABR0014',
     });
-    expect(response).toStrictEqual([critical_items1]);
-    // expect(critical_items1.part_number).toBe('VIXABR0014');
+
+    // @ts-expect-error
+    delete workbook.created;
+    // @ts-expect-error
+    delete workbook.modified;
+
+    expect(workbook).toMatchSnapshot();
   });
-  it('should able to lower a spreadsheet', async () => {
-    const critical_item2 = await fakeCriticalItemRepository.create({
+  it('should able to lower a spreadsheet "description"', async () => {
+    await fakeCriticalItemRepository.create({
       part_number: 'FVPG02076',
       stock_obs: 'Teste',
       purchase_obs: 'Compra autorizada',
@@ -53,7 +59,7 @@ describe('downloadExcelCriticalItems', () => {
     });
     await fakeCriticalItemRepository.create({
       part_number: 'SBM3060F212',
-      stock_obs: 'teste',
+      stock_obs: 'Teste',
       purchase_obs: 'Compra não autorizada',
       used_obs: 'SP',
       responsable: 'Katriel',
@@ -61,18 +67,25 @@ describe('downloadExcelCriticalItems', () => {
     });
     await fakeCriticalItemRepository.create({
       part_number: 'VIXABR0014',
-      stock_obs: 'teste',
+      stock_obs: 'Teste',
       purchase_obs: 'Compra autorizada',
       used_obs: 'SP',
       responsable: 'Arthur',
       description: 'Deu certooo!!!!!',
     });
-    const response = await downloadExcelCriticalItems.execute({
+
+    const workbook = await downloadExcelCriticalItems.execute({
       description: 'Olá',
     });
-    expect(response).toStrictEqual([critical_item2]);
+
+    // @ts-expect-error
+    delete workbook.created;
+    // @ts-expect-error
+    delete workbook.modified;
+
+    expect(workbook).toMatchSnapshot();
   });
-  it('should able to lower a spreadsheet', async () => {
+  it('should able to lower a spreadsheet "responsable"', async () => {
     await fakeCriticalItemRepository.create({
       part_number: 'FVPG02076',
       stock_obs: 'Teste',
@@ -81,9 +94,9 @@ describe('downloadExcelCriticalItems', () => {
       responsable: 'Ronaldo',
       description: 'Olá',
     });
-    const critical_item3 = await fakeCriticalItemRepository.create({
+    await fakeCriticalItemRepository.create({
       part_number: 'SBM3060F212',
-      stock_obs: 'teste',
+      stock_obs: 'Teste',
       purchase_obs: 'Compra não autorizada',
       used_obs: 'SP',
       responsable: 'Katriel',
@@ -91,15 +104,22 @@ describe('downloadExcelCriticalItems', () => {
     });
     await fakeCriticalItemRepository.create({
       part_number: 'VIXABR0014',
-      stock_obs: 'teste',
+      stock_obs: 'Teste',
       purchase_obs: 'Compra autorizada',
       used_obs: 'SP',
       responsable: 'Arthur',
       description: 'Deu certooo!!!!!',
     });
-    const response = await downloadExcelCriticalItems.execute({
+
+    const workbook = await downloadExcelCriticalItems.execute({
       responsable: 'Katriel',
     });
-    expect(response).toStrictEqual([critical_item3]);
+
+    // @ts-expect-error
+    delete workbook.created;
+    // @ts-expect-error
+    delete workbook.modified;
+
+    expect(workbook).toMatchSnapshot();
   });
 });
