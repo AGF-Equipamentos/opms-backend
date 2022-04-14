@@ -9,7 +9,7 @@ import User from '../infra/typeorm/entities/User';
 interface IRequest {
   user_id: string;
   name: string;
-  email: string;
+  username: string;
   old_password?: string;
   password?: string;
 }
@@ -27,7 +27,7 @@ class UpdateProfileService {
   public async execute({
     user_id,
     name,
-    email,
+    username,
     old_password,
     password,
   }: IRequest): Promise<User> {
@@ -37,14 +37,16 @@ class UpdateProfileService {
       throw new AppError('User does not exists.');
     }
 
-    const userWithUpdatedEmail = await this.usersRepository.findByEmail(email);
+    const userWithUpdatedUsername = await this.usersRepository.findByUsername(
+      username,
+    );
 
-    if (userWithUpdatedEmail && userWithUpdatedEmail.id !== user_id) {
+    if (userWithUpdatedUsername && userWithUpdatedUsername.id !== user_id) {
       throw new AppError('E-mail already in use.');
     }
 
     user.name = name;
-    user.email = email;
+    user.username = username;
 
     if (password && !old_password) {
       throw new AppError(

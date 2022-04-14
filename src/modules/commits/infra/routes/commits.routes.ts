@@ -22,11 +22,13 @@ commitsRouter.put(
   '/',
   celebrate({
     [Segments.BODY]: {
-      commitsUpdated: Joi.array().items(Joi.object({
-        commit_id: Joi.string().uuid().required(),
-        qty_delivered: Joi.number()
-      }))
-    }
+      commitsUpdated: Joi.array().items(
+        Joi.object({
+          commit_id: Joi.string().uuid().required(),
+          qty_delivered: Joi.number(),
+        }),
+      ),
+    },
   }),
   commitsController.update,
 );

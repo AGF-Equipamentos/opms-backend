@@ -1,0 +1,2644 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`downloadExcelCriticalItems should able to lower a spreadsheet "description" 1`] = `
+Workbook {
+  "_definedNames": DefinedNames {
+    "matrixMap": Object {},
+  },
+  "_worksheets": Array [
+    ,
+    Worksheet {
+      "_columns": Array [
+        Column {
+          "_header": "Número da Peça",
+          "_hidden": false,
+          "_key": "part_number",
+          "_number": 1,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        Column {
+          "_header": "Descrição do Item",
+          "_hidden": false,
+          "_key": "description",
+          "_number": 2,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 70,
+        },
+        Column {
+          "_header": "Observação do Estoque",
+          "_hidden": false,
+          "_key": "stock_obs",
+          "_number": 3,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 25,
+        },
+        Column {
+          "_header": "Observação de Compras",
+          "_hidden": false,
+          "_key": "purchase_obs",
+          "_number": 4,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 25,
+        },
+        Column {
+          "_header": "Usado",
+          "_hidden": false,
+          "_key": "used_obs",
+          "_number": 5,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        Column {
+          "_header": "Rsponsável",
+          "_hidden": false,
+          "_key": "responsable",
+          "_number": 6,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        Column {
+          "_header": "Criado",
+          "_hidden": false,
+          "_key": "created_at",
+          "_number": 7,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        Column {
+          "_header": "Ult.Atual",
+          "_hidden": false,
+          "_key": "updated_at",
+          "_number": 8,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+      ],
+      "_headerRowCount": 1,
+      "_keys": Object {
+        "created_at": Column {
+          "_header": "Criado",
+          "_hidden": false,
+          "_key": "created_at",
+          "_number": 7,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        "description": Column {
+          "_header": "Descrição do Item",
+          "_hidden": false,
+          "_key": "description",
+          "_number": 2,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 70,
+        },
+        "part_number": Column {
+          "_header": "Número da Peça",
+          "_hidden": false,
+          "_key": "part_number",
+          "_number": 1,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        "purchase_obs": Column {
+          "_header": "Observação de Compras",
+          "_hidden": false,
+          "_key": "purchase_obs",
+          "_number": 4,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 25,
+        },
+        "responsable": Column {
+          "_header": "Rsponsável",
+          "_hidden": false,
+          "_key": "responsable",
+          "_number": 6,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        "stock_obs": Column {
+          "_header": "Observação do Estoque",
+          "_hidden": false,
+          "_key": "stock_obs",
+          "_number": 3,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 25,
+        },
+        "updated_at": Column {
+          "_header": "Ult.Atual",
+          "_hidden": false,
+          "_key": "updated_at",
+          "_number": 8,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        "used_obs": Column {
+          "_header": "Usado",
+          "_hidden": false,
+          "_key": "used_obs",
+          "_number": 5,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+      },
+      "_media": Array [],
+      "_merges": Object {},
+      "_rows": Array [
+        Row {
+          "_cells": Array [
+            Cell {
+              "_address": "A1",
+              "_column": Column {
+                "_header": "Número da Peça",
+                "_hidden": false,
+                "_key": "part_number",
+                "_number": 1,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "A1",
+                  "type": 3,
+                  "value": "Número da Peça",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "B1",
+              "_column": Column {
+                "_header": "Descrição do Item",
+                "_hidden": false,
+                "_key": "description",
+                "_number": 2,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 70,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "B1",
+                  "type": 3,
+                  "value": "Descrição do Item",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "C1",
+              "_column": Column {
+                "_header": "Observação do Estoque",
+                "_hidden": false,
+                "_key": "stock_obs",
+                "_number": 3,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 25,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "C1",
+                  "type": 3,
+                  "value": "Observação do Estoque",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "D1",
+              "_column": Column {
+                "_header": "Observação de Compras",
+                "_hidden": false,
+                "_key": "purchase_obs",
+                "_number": 4,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 25,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "D1",
+                  "type": 3,
+                  "value": "Observação de Compras",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "E1",
+              "_column": Column {
+                "_header": "Usado",
+                "_hidden": false,
+                "_key": "used_obs",
+                "_number": 5,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "E1",
+                  "type": 3,
+                  "value": "Usado",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "F1",
+              "_column": Column {
+                "_header": "Rsponsável",
+                "_hidden": false,
+                "_key": "responsable",
+                "_number": 6,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "F1",
+                  "type": 3,
+                  "value": "Rsponsável",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "G1",
+              "_column": Column {
+                "_header": "Criado",
+                "_hidden": false,
+                "_key": "created_at",
+                "_number": 7,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "G1",
+                  "type": 3,
+                  "value": "Criado",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "H1",
+              "_column": Column {
+                "_header": "Ult.Atual",
+                "_hidden": false,
+                "_key": "updated_at",
+                "_number": 8,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "H1",
+                  "type": 3,
+                  "value": "Ult.Atual",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+          ],
+          "_number": 1,
+          "_outlineLevel": 0,
+          "_worksheet": [Circular],
+          "style": Object {},
+        },
+        Row {
+          "_cells": Array [
+            Cell {
+              "_address": "A2",
+              "_column": Column {
+                "_header": "Número da Peça",
+                "_hidden": false,
+                "_key": "part_number",
+                "_number": 1,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "A2",
+                  "type": 3,
+                  "value": "FVPG02076",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "B2",
+              "_column": Column {
+                "_header": "Descrição do Item",
+                "_hidden": false,
+                "_key": "description",
+                "_number": 2,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 70,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "B2",
+                  "type": 3,
+                  "value": "Olá",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "C2",
+              "_column": Column {
+                "_header": "Observação do Estoque",
+                "_hidden": false,
+                "_key": "stock_obs",
+                "_number": 3,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 25,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "C2",
+                  "type": 3,
+                  "value": "Teste",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "D2",
+              "_column": Column {
+                "_header": "Observação de Compras",
+                "_hidden": false,
+                "_key": "purchase_obs",
+                "_number": 4,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 25,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "D2",
+                  "type": 3,
+                  "value": "Compra autorizada",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "E2",
+              "_column": Column {
+                "_header": "Usado",
+                "_hidden": false,
+                "_key": "used_obs",
+                "_number": 5,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "E2",
+                  "type": 3,
+                  "value": "SP",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "F2",
+              "_column": Column {
+                "_header": "Rsponsável",
+                "_hidden": false,
+                "_key": "responsable",
+                "_number": 6,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "F2",
+                  "type": 3,
+                  "value": "Ronaldo",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+          ],
+          "_number": 2,
+          "_outlineLevel": 0,
+          "_worksheet": [Circular],
+          "style": Object {},
+        },
+      ],
+      "_workbook": [Circular],
+      "autoFilter": null,
+      "conditionalFormattings": Array [],
+      "dataValidations": DataValidations {
+        "model": Object {},
+      },
+      "headerFooter": Object {
+        "differentFirst": false,
+        "differentOddEven": false,
+        "evenFooter": null,
+        "evenHeader": null,
+        "firstFooter": null,
+        "firstHeader": null,
+        "oddFooter": null,
+        "oddHeader": null,
+      },
+      "id": 1,
+      "name": "Itens Críticos",
+      "orderNo": 1,
+      "pageSetup": Object {
+        "blackAndWhite": false,
+        "cellComments": "None",
+        "colBreaks": null,
+        "draft": false,
+        "errors": "displayed",
+        "firstPageNumber": undefined,
+        "fitToHeight": 1,
+        "fitToPage": false,
+        "fitToWidth": 1,
+        "horizontalCentered": false,
+        "horizontalDpi": 4294967295,
+        "margins": Object {
+          "bottom": 0.75,
+          "footer": 0.3,
+          "header": 0.3,
+          "left": 0.7,
+          "right": 0.7,
+          "top": 0.75,
+        },
+        "orientation": "portrait",
+        "pageOrder": "downThenOver",
+        "paperSize": undefined,
+        "rowBreaks": null,
+        "scale": 100,
+        "showGridLines": false,
+        "showRowColHeaders": false,
+        "verticalCentered": false,
+        "verticalDpi": 4294967295,
+      },
+      "properties": Object {
+        "defaultRowHeight": 15,
+        "dyDescent": 55,
+        "outlineLevelCol": 0,
+        "outlineLevelRow": 0,
+      },
+      "rowBreaks": Array [],
+      "sheetProtection": null,
+      "state": "visible",
+      "tables": Object {},
+      "views": Array [],
+    },
+  ],
+  "calcProperties": Object {},
+  "category": "",
+  "company": "",
+  "description": "",
+  "keywords": "",
+  "manager": "",
+  "media": Array [],
+  "properties": Object {},
+  "subject": "",
+  "title": "",
+  "views": Array [],
+}
+`;
+
+exports[`downloadExcelCriticalItems should able to lower a spreadsheet "part_number" 1`] = `
+Workbook {
+  "_definedNames": DefinedNames {
+    "matrixMap": Object {},
+  },
+  "_worksheets": Array [
+    ,
+    Worksheet {
+      "_columns": Array [
+        Column {
+          "_header": "Número da Peça",
+          "_hidden": false,
+          "_key": "part_number",
+          "_number": 1,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        Column {
+          "_header": "Descrição do Item",
+          "_hidden": false,
+          "_key": "description",
+          "_number": 2,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 70,
+        },
+        Column {
+          "_header": "Observação do Estoque",
+          "_hidden": false,
+          "_key": "stock_obs",
+          "_number": 3,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 25,
+        },
+        Column {
+          "_header": "Observação de Compras",
+          "_hidden": false,
+          "_key": "purchase_obs",
+          "_number": 4,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 25,
+        },
+        Column {
+          "_header": "Usado",
+          "_hidden": false,
+          "_key": "used_obs",
+          "_number": 5,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        Column {
+          "_header": "Rsponsável",
+          "_hidden": false,
+          "_key": "responsable",
+          "_number": 6,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        Column {
+          "_header": "Criado",
+          "_hidden": false,
+          "_key": "created_at",
+          "_number": 7,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        Column {
+          "_header": "Ult.Atual",
+          "_hidden": false,
+          "_key": "updated_at",
+          "_number": 8,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+      ],
+      "_headerRowCount": 1,
+      "_keys": Object {
+        "created_at": Column {
+          "_header": "Criado",
+          "_hidden": false,
+          "_key": "created_at",
+          "_number": 7,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        "description": Column {
+          "_header": "Descrição do Item",
+          "_hidden": false,
+          "_key": "description",
+          "_number": 2,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 70,
+        },
+        "part_number": Column {
+          "_header": "Número da Peça",
+          "_hidden": false,
+          "_key": "part_number",
+          "_number": 1,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        "purchase_obs": Column {
+          "_header": "Observação de Compras",
+          "_hidden": false,
+          "_key": "purchase_obs",
+          "_number": 4,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 25,
+        },
+        "responsable": Column {
+          "_header": "Rsponsável",
+          "_hidden": false,
+          "_key": "responsable",
+          "_number": 6,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        "stock_obs": Column {
+          "_header": "Observação do Estoque",
+          "_hidden": false,
+          "_key": "stock_obs",
+          "_number": 3,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 25,
+        },
+        "updated_at": Column {
+          "_header": "Ult.Atual",
+          "_hidden": false,
+          "_key": "updated_at",
+          "_number": 8,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        "used_obs": Column {
+          "_header": "Usado",
+          "_hidden": false,
+          "_key": "used_obs",
+          "_number": 5,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+      },
+      "_media": Array [],
+      "_merges": Object {},
+      "_rows": Array [
+        Row {
+          "_cells": Array [
+            Cell {
+              "_address": "A1",
+              "_column": Column {
+                "_header": "Número da Peça",
+                "_hidden": false,
+                "_key": "part_number",
+                "_number": 1,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "A1",
+                  "type": 3,
+                  "value": "Número da Peça",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "B1",
+              "_column": Column {
+                "_header": "Descrição do Item",
+                "_hidden": false,
+                "_key": "description",
+                "_number": 2,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 70,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "B1",
+                  "type": 3,
+                  "value": "Descrição do Item",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "C1",
+              "_column": Column {
+                "_header": "Observação do Estoque",
+                "_hidden": false,
+                "_key": "stock_obs",
+                "_number": 3,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 25,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "C1",
+                  "type": 3,
+                  "value": "Observação do Estoque",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "D1",
+              "_column": Column {
+                "_header": "Observação de Compras",
+                "_hidden": false,
+                "_key": "purchase_obs",
+                "_number": 4,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 25,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "D1",
+                  "type": 3,
+                  "value": "Observação de Compras",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "E1",
+              "_column": Column {
+                "_header": "Usado",
+                "_hidden": false,
+                "_key": "used_obs",
+                "_number": 5,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "E1",
+                  "type": 3,
+                  "value": "Usado",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "F1",
+              "_column": Column {
+                "_header": "Rsponsável",
+                "_hidden": false,
+                "_key": "responsable",
+                "_number": 6,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "F1",
+                  "type": 3,
+                  "value": "Rsponsável",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "G1",
+              "_column": Column {
+                "_header": "Criado",
+                "_hidden": false,
+                "_key": "created_at",
+                "_number": 7,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "G1",
+                  "type": 3,
+                  "value": "Criado",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "H1",
+              "_column": Column {
+                "_header": "Ult.Atual",
+                "_hidden": false,
+                "_key": "updated_at",
+                "_number": 8,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "H1",
+                  "type": 3,
+                  "value": "Ult.Atual",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+          ],
+          "_number": 1,
+          "_outlineLevel": 0,
+          "_worksheet": [Circular],
+          "style": Object {},
+        },
+        Row {
+          "_cells": Array [
+            Cell {
+              "_address": "A2",
+              "_column": Column {
+                "_header": "Número da Peça",
+                "_hidden": false,
+                "_key": "part_number",
+                "_number": 1,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "A2",
+                  "type": 3,
+                  "value": "VIXABR0014",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "B2",
+              "_column": Column {
+                "_header": "Descrição do Item",
+                "_hidden": false,
+                "_key": "description",
+                "_number": 2,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 70,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "B2",
+                  "type": 3,
+                  "value": "Deu certooo!!!!!",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "C2",
+              "_column": Column {
+                "_header": "Observação do Estoque",
+                "_hidden": false,
+                "_key": "stock_obs",
+                "_number": 3,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 25,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "C2",
+                  "type": 3,
+                  "value": "Teste",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "D2",
+              "_column": Column {
+                "_header": "Observação de Compras",
+                "_hidden": false,
+                "_key": "purchase_obs",
+                "_number": 4,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 25,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "D2",
+                  "type": 3,
+                  "value": "Compra autorizada",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "E2",
+              "_column": Column {
+                "_header": "Usado",
+                "_hidden": false,
+                "_key": "used_obs",
+                "_number": 5,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "E2",
+                  "type": 3,
+                  "value": "SP",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "F2",
+              "_column": Column {
+                "_header": "Rsponsável",
+                "_hidden": false,
+                "_key": "responsable",
+                "_number": 6,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "F2",
+                  "type": 3,
+                  "value": "Arthur",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+          ],
+          "_number": 2,
+          "_outlineLevel": 0,
+          "_worksheet": [Circular],
+          "style": Object {},
+        },
+      ],
+      "_workbook": [Circular],
+      "autoFilter": null,
+      "conditionalFormattings": Array [],
+      "dataValidations": DataValidations {
+        "model": Object {},
+      },
+      "headerFooter": Object {
+        "differentFirst": false,
+        "differentOddEven": false,
+        "evenFooter": null,
+        "evenHeader": null,
+        "firstFooter": null,
+        "firstHeader": null,
+        "oddFooter": null,
+        "oddHeader": null,
+      },
+      "id": 1,
+      "name": "Itens Críticos",
+      "orderNo": 1,
+      "pageSetup": Object {
+        "blackAndWhite": false,
+        "cellComments": "None",
+        "colBreaks": null,
+        "draft": false,
+        "errors": "displayed",
+        "firstPageNumber": undefined,
+        "fitToHeight": 1,
+        "fitToPage": false,
+        "fitToWidth": 1,
+        "horizontalCentered": false,
+        "horizontalDpi": 4294967295,
+        "margins": Object {
+          "bottom": 0.75,
+          "footer": 0.3,
+          "header": 0.3,
+          "left": 0.7,
+          "right": 0.7,
+          "top": 0.75,
+        },
+        "orientation": "portrait",
+        "pageOrder": "downThenOver",
+        "paperSize": undefined,
+        "rowBreaks": null,
+        "scale": 100,
+        "showGridLines": false,
+        "showRowColHeaders": false,
+        "verticalCentered": false,
+        "verticalDpi": 4294967295,
+      },
+      "properties": Object {
+        "defaultRowHeight": 15,
+        "dyDescent": 55,
+        "outlineLevelCol": 0,
+        "outlineLevelRow": 0,
+      },
+      "rowBreaks": Array [],
+      "sheetProtection": null,
+      "state": "visible",
+      "tables": Object {},
+      "views": Array [],
+    },
+  ],
+  "calcProperties": Object {},
+  "category": "",
+  "company": "",
+  "description": "",
+  "keywords": "",
+  "manager": "",
+  "media": Array [],
+  "properties": Object {},
+  "subject": "",
+  "title": "",
+  "views": Array [],
+}
+`;
+
+exports[`downloadExcelCriticalItems should able to lower a spreadsheet "responsable" 1`] = `
+Workbook {
+  "_definedNames": DefinedNames {
+    "matrixMap": Object {},
+  },
+  "_worksheets": Array [
+    ,
+    Worksheet {
+      "_columns": Array [
+        Column {
+          "_header": "Número da Peça",
+          "_hidden": false,
+          "_key": "part_number",
+          "_number": 1,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        Column {
+          "_header": "Descrição do Item",
+          "_hidden": false,
+          "_key": "description",
+          "_number": 2,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 70,
+        },
+        Column {
+          "_header": "Observação do Estoque",
+          "_hidden": false,
+          "_key": "stock_obs",
+          "_number": 3,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 25,
+        },
+        Column {
+          "_header": "Observação de Compras",
+          "_hidden": false,
+          "_key": "purchase_obs",
+          "_number": 4,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 25,
+        },
+        Column {
+          "_header": "Usado",
+          "_hidden": false,
+          "_key": "used_obs",
+          "_number": 5,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        Column {
+          "_header": "Rsponsável",
+          "_hidden": false,
+          "_key": "responsable",
+          "_number": 6,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        Column {
+          "_header": "Criado",
+          "_hidden": false,
+          "_key": "created_at",
+          "_number": 7,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        Column {
+          "_header": "Ult.Atual",
+          "_hidden": false,
+          "_key": "updated_at",
+          "_number": 8,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+      ],
+      "_headerRowCount": 1,
+      "_keys": Object {
+        "created_at": Column {
+          "_header": "Criado",
+          "_hidden": false,
+          "_key": "created_at",
+          "_number": 7,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        "description": Column {
+          "_header": "Descrição do Item",
+          "_hidden": false,
+          "_key": "description",
+          "_number": 2,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 70,
+        },
+        "part_number": Column {
+          "_header": "Número da Peça",
+          "_hidden": false,
+          "_key": "part_number",
+          "_number": 1,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        "purchase_obs": Column {
+          "_header": "Observação de Compras",
+          "_hidden": false,
+          "_key": "purchase_obs",
+          "_number": 4,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 25,
+        },
+        "responsable": Column {
+          "_header": "Rsponsável",
+          "_hidden": false,
+          "_key": "responsable",
+          "_number": 6,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        "stock_obs": Column {
+          "_header": "Observação do Estoque",
+          "_hidden": false,
+          "_key": "stock_obs",
+          "_number": 3,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 25,
+        },
+        "updated_at": Column {
+          "_header": "Ult.Atual",
+          "_hidden": false,
+          "_key": "updated_at",
+          "_number": 8,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+        "used_obs": Column {
+          "_header": "Usado",
+          "_hidden": false,
+          "_key": "used_obs",
+          "_number": 5,
+          "_outlineLevel": undefined,
+          "_worksheet": [Circular],
+          "style": Object {},
+          "width": 15,
+        },
+      },
+      "_media": Array [],
+      "_merges": Object {},
+      "_rows": Array [
+        Row {
+          "_cells": Array [
+            Cell {
+              "_address": "A1",
+              "_column": Column {
+                "_header": "Número da Peça",
+                "_hidden": false,
+                "_key": "part_number",
+                "_number": 1,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "A1",
+                  "type": 3,
+                  "value": "Número da Peça",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "B1",
+              "_column": Column {
+                "_header": "Descrição do Item",
+                "_hidden": false,
+                "_key": "description",
+                "_number": 2,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 70,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "B1",
+                  "type": 3,
+                  "value": "Descrição do Item",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "C1",
+              "_column": Column {
+                "_header": "Observação do Estoque",
+                "_hidden": false,
+                "_key": "stock_obs",
+                "_number": 3,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 25,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "C1",
+                  "type": 3,
+                  "value": "Observação do Estoque",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "D1",
+              "_column": Column {
+                "_header": "Observação de Compras",
+                "_hidden": false,
+                "_key": "purchase_obs",
+                "_number": 4,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 25,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "D1",
+                  "type": 3,
+                  "value": "Observação de Compras",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "E1",
+              "_column": Column {
+                "_header": "Usado",
+                "_hidden": false,
+                "_key": "used_obs",
+                "_number": 5,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "E1",
+                  "type": 3,
+                  "value": "Usado",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "F1",
+              "_column": Column {
+                "_header": "Rsponsável",
+                "_hidden": false,
+                "_key": "responsable",
+                "_number": 6,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "F1",
+                  "type": 3,
+                  "value": "Rsponsável",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "G1",
+              "_column": Column {
+                "_header": "Criado",
+                "_hidden": false,
+                "_key": "created_at",
+                "_number": 7,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "G1",
+                  "type": 3,
+                  "value": "Criado",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+            Cell {
+              "_address": "H1",
+              "_column": Column {
+                "_header": "Ult.Atual",
+                "_hidden": false,
+                "_key": "updated_at",
+                "_number": 8,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "H1",
+                  "type": 3,
+                  "value": "Ult.Atual",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+                "fill": Object {
+                  "fgColor": Object {
+                    "argb": "DAEEF3",
+                  },
+                  "pattern": "solid",
+                  "type": "pattern",
+                },
+                "font": Object {
+                  "bold": true,
+                },
+              },
+            },
+          ],
+          "_number": 1,
+          "_outlineLevel": 0,
+          "_worksheet": [Circular],
+          "style": Object {},
+        },
+        Row {
+          "_cells": Array [
+            Cell {
+              "_address": "A2",
+              "_column": Column {
+                "_header": "Número da Peça",
+                "_hidden": false,
+                "_key": "part_number",
+                "_number": 1,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "A2",
+                  "type": 3,
+                  "value": "SBM3060F212",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "B2",
+              "_column": Column {
+                "_header": "Descrição do Item",
+                "_hidden": false,
+                "_key": "description",
+                "_number": 2,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 70,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "B2",
+                  "type": 3,
+                  "value": "Espero que de certo",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "C2",
+              "_column": Column {
+                "_header": "Observação do Estoque",
+                "_hidden": false,
+                "_key": "stock_obs",
+                "_number": 3,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 25,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "C2",
+                  "type": 3,
+                  "value": "Teste",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "D2",
+              "_column": Column {
+                "_header": "Observação de Compras",
+                "_hidden": false,
+                "_key": "purchase_obs",
+                "_number": 4,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 25,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "D2",
+                  "type": 3,
+                  "value": "Compra não autorizada",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "E2",
+              "_column": Column {
+                "_header": "Usado",
+                "_hidden": false,
+                "_key": "used_obs",
+                "_number": 5,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "E2",
+                  "type": 3,
+                  "value": "SP",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+            Cell {
+              "_address": "F2",
+              "_column": Column {
+                "_header": "Rsponsável",
+                "_hidden": false,
+                "_key": "responsable",
+                "_number": 6,
+                "_outlineLevel": undefined,
+                "_worksheet": [Circular],
+                "style": Object {},
+                "width": 15,
+              },
+              "_mergeCount": 0,
+              "_row": [Circular],
+              "_value": StringValue {
+                "model": Object {
+                  "address": "F2",
+                  "type": 3,
+                  "value": "Katriel",
+                },
+              },
+              "style": Object {
+                "border": Object {
+                  "bottom": Object {
+                    "style": "thin",
+                  },
+                  "left": Object {
+                    "style": "thin",
+                  },
+                  "right": Object {
+                    "style": "thin",
+                  },
+                  "top": Object {
+                    "style": "thin",
+                  },
+                },
+              },
+            },
+          ],
+          "_number": 2,
+          "_outlineLevel": 0,
+          "_worksheet": [Circular],
+          "style": Object {},
+        },
+      ],
+      "_workbook": [Circular],
+      "autoFilter": null,
+      "conditionalFormattings": Array [],
+      "dataValidations": DataValidations {
+        "model": Object {},
+      },
+      "headerFooter": Object {
+        "differentFirst": false,
+        "differentOddEven": false,
+        "evenFooter": null,
+        "evenHeader": null,
+        "firstFooter": null,
+        "firstHeader": null,
+        "oddFooter": null,
+        "oddHeader": null,
+      },
+      "id": 1,
+      "name": "Itens Críticos",
+      "orderNo": 1,
+      "pageSetup": Object {
+        "blackAndWhite": false,
+        "cellComments": "None",
+        "colBreaks": null,
+        "draft": false,
+        "errors": "displayed",
+        "firstPageNumber": undefined,
+        "fitToHeight": 1,
+        "fitToPage": false,
+        "fitToWidth": 1,
+        "horizontalCentered": false,
+        "horizontalDpi": 4294967295,
+        "margins": Object {
+          "bottom": 0.75,
+          "footer": 0.3,
+          "header": 0.3,
+          "left": 0.7,
+          "right": 0.7,
+          "top": 0.75,
+        },
+        "orientation": "portrait",
+        "pageOrder": "downThenOver",
+        "paperSize": undefined,
+        "rowBreaks": null,
+        "scale": 100,
+        "showGridLines": false,
+        "showRowColHeaders": false,
+        "verticalCentered": false,
+        "verticalDpi": 4294967295,
+      },
+      "properties": Object {
+        "defaultRowHeight": 15,
+        "dyDescent": 55,
+        "outlineLevelCol": 0,
+        "outlineLevelRow": 0,
+      },
+      "rowBreaks": Array [],
+      "sheetProtection": null,
+      "state": "visible",
+      "tables": Object {},
+      "views": Array [],
+    },
+  ],
+  "calcProperties": Object {},
+  "category": "",
+  "company": "",
+  "description": "",
+  "keywords": "",
+  "manager": "",
+  "media": Array [],
+  "properties": Object {},
+  "subject": "",
+  "title": "",
+  "views": Array [],
+}
+`;
