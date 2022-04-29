@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2022-02-17T11:01:12.132Z
-__export_source: insomnia.desktop.app:v2021.7.2
+__export_date: 2022-04-29T13:04:02.636Z
+__export_source: insomnia.desktop.app:v2022.3.0
 resources:
   - _id: req_4f4013bc82f04f4094f6039de2f41870
     parentId: fld_bbf95639de36421887831a8877f5d413
-    modified: 1645095667068
+    modified: 1647602537973
     created: 1624905695609
     url: "{{ base_url  }}/ops"
     name: Create
@@ -66,7 +66,7 @@ resources:
     _type: workspace
   - _id: req_fc35ccd03958472bbdfb19c7467f34c4
     parentId: fld_bbf95639de36421887831a8877f5d413
-    modified: 1645019899130
+    modified: 1647602527650
     created: 1625745769593
     url: "{{ base_url  }}/ops"
     name: List
@@ -95,7 +95,7 @@ resources:
     _type: request
   - _id: req_9225ff381f6b412eaafc98e3b594b1f7
     parentId: fld_f6f2b40be8a04f2f804632bcb768233f
-    modified: 1590173982876
+    modified: 1646923449494
     created: 1589586785137
     url: "{{ base_url  }}/password/forgot"
     name: Forgot Password
@@ -144,7 +144,7 @@ resources:
     _type: request_group
   - _id: req_61314829988549a290c7cc2b906182b4
     parentId: fld_f6f2b40be8a04f2f804632bcb768233f
-    modified: 1590173983877
+    modified: 1646923450804
     created: 1589587350162
     url: "{{ base_url  }}/password/reset"
     name: Reset Password
@@ -175,7 +175,7 @@ resources:
     _type: request
   - _id: req_34803c3542444160b6d1fb9f5830284c
     parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
-    modified: 1644934036044
+    modified: 1647006076719
     created: 1587516023667
     url: "{{ base_url  }}/sessions"
     name: Authenticate
@@ -205,7 +205,7 @@ resources:
     _type: request
   - _id: req_13bf0d50df6b4a4592f96b4a3606cf66
     parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
-    modified: 1644934040892
+    modified: 1647006116847
     created: 1587814009692
     url: "{{ base_url  }}/users"
     name: Register
@@ -238,7 +238,7 @@ resources:
     _type: request
   - _id: req_58c8a8e630f54d5e8fbe017b7d6323a0
     parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
-    modified: 1645018286425
+    modified: 1646998639890
     created: 1589631886454
     url: "{{ base_url  }}/profile"
     name: Show profile
@@ -262,7 +262,7 @@ resources:
     _type: request
   - _id: req_175eb521b48d4f1695276c2e99932795
     parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
-    modified: 1645013974033
+    modified: 1646998641242
     created: 1589631978674
     url: "{{ base_url  }}/profile/bc93c3f3-fc4f-4069-95c2-6f2054510084"
     name: Update profile
@@ -298,7 +298,7 @@ resources:
     _type: request
   - _id: req_047d27cc63d24788a0fe12aa182ca030
     parentId: fld_ab0d2d6fefa14730b50b5f6a8a81db55
-    modified: 1645013972591
+    modified: 1646998648138
     created: 1587817624824
     url: "{{ base_url  }}/users/avatar"
     name: Update avatar
@@ -333,22 +333,19 @@ resources:
     _type: request
   - _id: req_630be2b595c948cc9d9beaf188d7e131
     parentId: fld_c131529be8884880afd9dc08d9a9664f
-    modified: 1645095639699
+    modified: 1651236791334
     created: 1645095639699
-    url: "{{ _.baseURL }}/critical-items/0bcc669b-d453-46ad-b91c-9f45846559d6"
-    name: UpdateCriticalItems
+    url: "{{ base_url  }}/critical-items/stock/3c410865-2070-4c1d-b2e6-066fa478bd2a"
+    name: UpdatedStock
     description: ""
     method: PUT
     body:
       mimeType: application/json
       text: |-
         {
-        		"part_number": "12350700",
-        		"description": "Presilhas",
-        		"stock_obs": "Compra não autorizada",
-        		"purchase_obs": "Sem saldo",
-        		"used_obs": "ES",
-        		"responsable": "Ronaldo"
+        	"stock_obs": "Compra autorizada2",
+        	"description": "Vamos que vamos",
+        	"used_obs": "SP"
         }
     parameters: []
     headers:
@@ -367,19 +364,55 @@ resources:
     _type: request
   - _id: fld_c131529be8884880afd9dc08d9a9664f
     parentId: wrk_0533caf897bb446abfec22ddf146e129
-    modified: 1645095639690
+    modified: 1645188812300
     created: 1645095639690
     name: Critical Items
     description: ""
     environment: {}
-    environmentPropertyOrder: null
+    environmentPropertyOrder: {}
     metaSortKey: -1000000000
     _type: request_group
+  - _id: req_7a9515b73f024a9698b3dffc71aaa4a1
+    parentId: fld_c131529be8884880afd9dc08d9a9664f
+    modified: 1651236791997
+    created: 1645537359359
+    url: "{{
+      base_url  }}/critical-items/purchase/407013b1-f999-4cd9-aea8-de9cdbce7bdb"
+    name: UpdatedPurchase
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"purchase_obs": "Compra não atorizada ",
+        	"description": "123",
+        	"responsable": ""
+        }
+    parameters:
+      - id: pair_3a86678fd064462c8fec9a0490bd43f7
+        name: ""
+        value: ""
+        description: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_21767ec897454d68a7b3b32dde595da0
+    authentication: {}
+    metaSortKey: -1644957284837
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_ff4ef9fd0f71435a859f9b1a348faf26
     parentId: fld_c131529be8884880afd9dc08d9a9664f
-    modified: 1645095639697
+    modified: 1647604614479
     created: 1645095639697
-    url: "{{ _.baseURL }}/critical-items/4f599e89-4ba3-4d36-bf2a-4604c8d03dc2"
+    url: "{{ base_url  }}/critical-items/"
     name: DeleteCriticalItems
     description: ""
     method: DELETE
@@ -398,14 +431,29 @@ resources:
     _type: request
   - _id: req_4079aa687cb74424aae42847a37404d7
     parentId: fld_c131529be8884880afd9dc08d9a9664f
-    modified: 1645095639694
+    modified: 1651175818187
     created: 1645095639694
-    url: "{{ _.baseURL }}/critical-items"
+    url: "{{ base_url  }}/critical-items"
     name: GetAllCriticalItems
     description: ""
     method: GET
     body: {}
-    parameters: []
+    parameters:
+      - id: pair_e9ee8a3dc7df42d0be0ac4c3b5f3a3d5
+        name: part_number
+        value: VIXA
+        description: ""
+        disabled: true
+      - id: pair_3e7b1e28201a4b65aac9186daffc0ea4
+        name: description
+        value: DEU CERTO
+        description: ""
+        disabled: true
+      - id: pair_e3b0aecdc6d646dd919cf813aad03bdc
+        name: responsable
+        value: ALANA
+        description: ""
+        disabled: true
     headers: []
     authentication: {}
     metaSortKey: -1644957284762
@@ -417,11 +465,47 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_cede776ba6a3401ca6cc16202632f868
+    parentId: fld_c131529be8884880afd9dc08d9a9664f
+    modified: 1649338276034
+    created: 1649251404823
+    url: "{{ base_url  }}/critical-items/download"
+    name: Download
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_e9ee8a3dc7df42d0be0ac4c3b5f3a3d5
+        name: part_number
+        value: VIXA
+        description: ""
+        disabled: true
+      - id: pair_3e7b1e28201a4b65aac9186daffc0ea4
+        name: description
+        value: PARAFUSOS
+        description: ""
+        disabled: true
+      - id: pair_e3b0aecdc6d646dd919cf813aad03bdc
+        name: responsable
+        value: ALANA
+        description: ""
+        disabled: true
+    headers: []
+    authentication: {}
+    metaSortKey: -1644957284737
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_2dd683da7f7b4f368d59220c94c4f24f
     parentId: fld_c131529be8884880afd9dc08d9a9664f
-    modified: 1645095639692
+    modified: 1649413720015
     created: 1645095639692
-    url: "{{ _.baseURL }}/critical-items"
+    url: "{{ base_url  }}/critical-items"
     name: CreateCriticalItems
     description: ""
     method: POST
@@ -429,11 +513,11 @@ resources:
       mimeType: application/json
       text: |-
         {
-        	"part_number": "Teste Valida",
-        	"stock_obs": "Sem feedback para comprar",
-          "purchase_obs": "Sem informação",
-          "used_obs": "BH",
-          "responsable": "Bruna"
+        	"part_number": "FVPG02076",
+        	"stock_obs": "Compra  atorizada",
+        	"purchase_obs": "Compra  atorizada",
+        	"used_obs": "ES",
+        	"responsable": "Beatriz"
         }
     parameters: []
     headers:
@@ -478,7 +562,7 @@ resources:
     _type: api_spec
   - _id: env_1d07aac1ca98480da48f92723fde7236
     parentId: env_f12c963ec73ddd2c39108df7bcb4bedca437e469
-    modified: 1644944061318
+    modified: 1646404773111
     created: 1587516040365
     name: dev
     data:

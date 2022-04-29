@@ -69,7 +69,7 @@ export default class CriticalItemsController {
         id,
         description: description?.toUpperCase().trim(),
         purchase_obs: purchase_obs?.trim(),
-        responsable: responsable.toUpperCase().trim(),
+        responsable: responsable?.toUpperCase().trim(),
       });
     }
 
